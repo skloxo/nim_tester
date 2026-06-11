@@ -198,8 +198,8 @@ describe("rankCategory", () => {
       },
     };
     const ranked = rankCategory(modelScores);
-    expect(ranked["model-b"].rank).toBe(1);
-    expect(ranked["model-a"].rank).toBe(2);
+    expect(ranked["model-b"]?.rank).toBe(1);
+    expect(ranked["model-a"]?.rank).toBe(2);
   });
 
   it("should add speed bonus based on TPS", () => {
@@ -228,8 +228,8 @@ describe("rankCategory", () => {
       },
     };
     const ranked = rankCategory(modelScores);
-    expect(ranked["fast-model"].score).toBeGreaterThan(70);
-    expect(ranked["slow-model"].score).toBeLessThan(ranked["fast-model"].score);
+    expect(ranked["fast-model"]?.score).toBeGreaterThan(70);
+    expect(ranked["slow-model"]?.score).toBeLessThan(ranked["fast-model"]?.score ?? 0);
   });
 
   it("should handle empty input", () => {
@@ -263,7 +263,7 @@ describe("rankCategory", () => {
       },
     };
     const ranked = rankCategory(modelScores);
-    expect(ranked["model-a"].rank).toBe(1);
-    expect(ranked["model-b"].rank).toBe(1);
+    expect(ranked["model-a"]?.rank).toBe(1);
+    expect(ranked["model-b"]?.rank).toBe(1);
   });
 });

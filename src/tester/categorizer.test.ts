@@ -148,9 +148,9 @@ describe("ModelCategorizer", () => {
       ];
       const groups = categorizer.categorize(models);
       expect(groups.text_embedding).toHaveLength(1);
-      expect(groups.text_embedding[0].id).toBe("embed-text-model");
+      expect(groups.text_embedding?.[0]?.id).toBe("embed-text-model");
       expect(groups.general_chat).toHaveLength(1);
-      expect(groups.general_chat[0].id).toBe("embed-vision-model");
+      expect(groups.general_chat?.[0]?.id).toBe("embed-vision-model");
     });
   });
 });
