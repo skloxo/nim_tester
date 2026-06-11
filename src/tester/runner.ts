@@ -1,9 +1,10 @@
 import type { TestCase, ModelResult } from "./types.ts";
 import { getCases } from "./cases.ts";
 import { NetworkSelector } from "./network.ts";
+import { CircuitBreaker } from "./circuitBreaker.ts";
 
 export class HTTPStatusError extends Error {
-  constructor(public status: number, message: string) {
+  constructor(public status: number, message: string, public headers?: Headers) {
     super(message);
     this.name = "HTTPStatusError";
   }
@@ -145,6 +146,7 @@ export class TestRunner {
   private rotator: KeyRotator;
   private selector: NetworkSelector;
   private sem: Semaphore;
+  private breaker: CircuitBreaker;
 
   constructor(config: any, mode: string, progressCallback?: (results: ModelResult[]) => Promise<void> | void) {
     this.config = config;
@@ -163,6 +165,10 @@ export class TestRunner {
     this.rotator = new KeyRotator(config.api_keys || [], rateLimit, rateWindow);
     this.selector = new NetworkSelector(config);
     this.sem = new Semaphore(this.concurrency);
+    this.breaker = new CircuitBreaker(
+      config.testing?.circuit_breaker_threshold || 5,
+      config.testing?.circuit_breaker_reset_timeout || 30000,
+    );
   }
 
   private resolveEndpoint(category: string): string {
@@ -194,7 +200,7 @@ export class TestRunner {
 
     const resp = await fetch(url, options);
     if (resp.status >= 400) {
-      throw new HTTPStatusError(resp.status, `HTTP error! status: ${resp.status}`);
+      throw new HTTPStatusError(resp.status, `HTTP error! status: ${resp.status}`, resp.headers);
     }
 
     if (streaming) {
@@ -283,13 +289,15 @@ export class TestRunner {
         let raw: any;
         let elapsed = 0.0;
         try {
-          const headers: Record<string, string> = {
-            "Authorization": `Bearer ${apiKey}`,
-            "Content-Type": "application/json",
-            "Accept": streaming ? "text/event-stream" : "application/json",
-          };
-          const payload = caseItem.buildPayload(modelId);
-          const [resData, elapsedMs] = await this.doRequest(url, payload, headers, streaming, clientKwargs);
+          const [resData, elapsedMs] = await this.breaker.execute(async () => {
+            const headers: Record<string, string> = {
+              "Authorization": `Bearer ${apiKey}`,
+              "Content-Type": "application/json",
+              "Accept": streaming ? "text/event-stream" : "application/json",
+            };
+            const payload = caseItem.buildPayload(modelId);
+            return this.doRequest(url, payload, headers, streaming, clientKwargs);
+          });
           raw = resData;
           elapsed = elapsedMs;
         } finally {
@@ -323,8 +331,15 @@ export class TestRunner {
               elapsed_ms: 0,
             };
           }
-          console.log(`  [${modelId}] ${caseItem.name} HTTP ${status} (attempt ${attempt + 1}/${1 + this.retry})`);
-          await new Promise((resolve) => setTimeout(resolve, (1 + attempt) * 1000));
+          if (status === 429) {
+            const retryAfter = e.headers?.get('retry-after');
+            const waitMs = retryAfter ? parseInt(retryAfter) * 1000 : (1 + attempt) * 2000;
+            console.log(`  [限速] ${modelId} 等待 ${waitMs / 1000}s (attempt ${attempt + 1}/${1 + this.retry})`);
+            await new Promise((resolve) => setTimeout(resolve, waitMs));
+          } else {
+            console.log(`  [${modelId}] ${caseItem.name} HTTP ${status} (attempt ${attempt + 1}/${1 + this.retry})`);
+            await new Promise((resolve) => setTimeout(resolve, (1 + attempt) * 1000));
+          }
         } else {
           console.log(`  [${modelId}] ${caseItem.name} error: ${e.message || e} (attempt ${attempt + 1}/${1 + this.retry})`);
           await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -361,9 +376,9 @@ export class TestRunner {
     for (const [category, models] of Object.entries(groups)) {
       console.log(`  🔬 [${category}] 开始测试 ${models.length} 个模型...`);
       const catResults: ModelResult[] = [];
-      const modelPromises = models.map(async (m) => {
+      const modelPromises = models.map(async (m, idx) => {
         const modelResults = await this.runModel(m, category, clientKwargs);
-        catResults.push(...modelResults);
+        catResults[idx] = modelResults;
         done++;
         const modelId = m.id || m.model_id || "?";
         const passed = modelResults.filter((r) => r.status === "pass").length;
@@ -374,7 +389,7 @@ export class TestRunner {
         }
       });
       await Promise.all(modelPromises);
-      allResults[category] = catResults;
+      allResults[category] = catResults.flat();
     }
 
     return allResults;

@@ -103,43 +103,56 @@ export interface ModelResultBatchItem {
   raw_results: ModelResult[];
 }
 
+let stmts: {
+  insertResults: any;
+  selectUseCase: any;
+  insertUseCase: any;
+  updateUseCaseConfidence: any;
+  updateUseCaseContent: any;
+} | null = null;
+
+function getStmts() {
+  if (!stmts) {
+    const db = getDb();
+    stmts = {
+      insertResults: db.prepare(`
+        INSERT INTO model_results 
+        (run_id, model_id, category, score, grade, rank, avg_tps, passed, total, use_cases, results_json)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `),
+      selectUseCase: db.prepare(`
+        SELECT use_cases, confidence FROM use_case_cache WHERE model_id = ? AND category = ?
+      `),
+      insertUseCase: db.prepare(`
+        INSERT INTO use_case_cache (model_id, category, use_cases, confidence, updated_at)
+        VALUES (?, ?, ?, 1, ?)
+      `),
+      updateUseCaseConfidence: db.prepare(`
+        UPDATE use_case_cache SET confidence = confidence + 1, updated_at = ?
+        WHERE model_id = ? AND category = ?
+      `),
+      updateUseCaseContent: db.prepare(`
+        UPDATE use_case_cache SET use_cases = ?, confidence = 1, updated_at = ?
+        WHERE model_id = ? AND category = ?
+      `),
+    };
+  }
+  return stmts;
+}
+
 export function saveModelResultsBatch(
   runId: string,
   items: ModelResultBatchItem[]
 ): void {
   const db = getDb();
-
-  const insertResults = db.prepare(`
-    INSERT INTO model_results 
-    (run_id, model_id, category, score, grade, rank, avg_tps, passed, total, use_cases, results_json)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `);
-
-  const selectUseCase = db.prepare(`
-    SELECT use_cases, confidence FROM use_case_cache WHERE model_id = ? AND category = ?
-  `);
-
-  const insertUseCase = db.prepare(`
-    INSERT INTO use_case_cache (model_id, category, use_cases, confidence, updated_at)
-    VALUES (?, ?, ?, 1, ?)
-  `);
-
-  const updateUseCaseConfidence = db.prepare(`
-    UPDATE use_case_cache SET confidence = confidence + 1, updated_at = ?
-    WHERE model_id = ? AND category = ?
-  `);
-
-  const updateUseCaseContent = db.prepare(`
-    UPDATE use_case_cache SET use_cases = ?, confidence = 1, updated_at = ?
-    WHERE model_id = ? AND category = ?
-  `);
+  const s = getStmts();
 
   const tx = db.transaction(() => {
     for (const item of items) {
       const { model_id, category, scored_model, raw_results } = item;
       const useCasesStr = JSON.stringify(scored_model.use_cases || []);
       
-      insertResults.run(
+      s.insertResults.run(
         runId,
         model_id,
         category,
@@ -153,14 +166,14 @@ export function saveModelResultsBatch(
         JSON.stringify(raw_results)
       );
 
-      const row = selectUseCase.get(model_id, category) as { use_cases: string; confidence: number } | undefined;
+      const row = s.selectUseCase.get(model_id, category) as { use_cases: string; confidence: number } | undefined;
       const now = new Date().toISOString().slice(0, 19); // YYYY-MM-DDTHH:MM:SS
       if (!row) {
-        insertUseCase.run(model_id, category, useCasesStr, now);
+        s.insertUseCase.run(model_id, category, useCasesStr, now);
       } else if (row.use_cases === useCasesStr) {
-        updateUseCaseConfidence.run(now, model_id, category);
+        s.updateUseCaseConfidence.run(now, model_id, category);
       } else {
-        updateUseCaseContent.run(useCasesStr, now, model_id, category);
+        s.updateUseCaseContent.run(useCasesStr, now, model_id, category);
       }
     }
   });
