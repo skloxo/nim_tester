@@ -26,33 +26,31 @@ jobs:
         run: bun run compile-check
 
       - name: Run tests with coverage
-        run: bun test --coverage
-
-      - name: Upload coverage report
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-report
-          path: coverage/
-          retention-days: 7
+        run: bun test --coverage 2>&1 | tee coverage-output.txt
 
       - name: Generate coverage summary
-        if: github.event_name == 'pull_request'
         run: |
           echo "## Code Coverage Report" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [ -f coverage/coverage-summary.json ]; then
-            cat coverage/coverage-summary.json | jq -r '
-              "### Coverage Summary\n",
-              "| Metric | Coverage |",
-              "|--------|----------|",
-              "| Lines | \(.total.lines.pct)% |",
-              "| Functions | \(.total.functions.pct)% |",
-              "| Branches | \(.total.branches.pct)% |",
-              "| Statements | \(.total.statements.pct)% |"
-            ' >> $GITHUB_STEP_SUMMARY
-          else
-            echo "Coverage report generated. Check artifacts for details." >> $GITHUB_STEP_SUMMARY
-          fi
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat coverage-output.txt >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          
+          # Extract coverage percentages
+          COVERAGE_LINE=$(grep -E "All files" coverage-output.txt | awk '{print $4}')
+          COVERAGE_FUNC=$(grep -E "All files" coverage-output.txt | awk '{print $2}')
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Line Coverage**: ${COVERAGE_LINE:-N/A}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Function Coverage**: ${COVERAGE_FUNC:-N/A}" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload coverage output
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-output
+          path: coverage-output.txt
+          retention-days: 7
 
   lint:
     runs-on: ubuntu-latest
