@@ -3,8 +3,8 @@ import { serve } from "bun";
 import { parse } from "yaml";
 import { mkdir } from "fs/promises";
 import { join, basename, dirname } from "path";
-import { readdirSync, statSync, existsSync } from "fs";
-import { initDb, saveRun, finishRun, saveModelResultsBatch, listRuns, getRunResults, getDb } from "./tester/db.ts";
+import { readdirSync, statSync, existsSync, watch } from "fs";
+import { initDb, saveRun, finishRun, saveModelResultsBatch, listRuns, getRunResults, getDb, compareRuns } from "./tester/db.ts";
 import { NetworkSelector } from "./tester/network.ts";
 import { ModelFetcher } from "./tester/model_fetcher.ts";
 import { bulkInitMeta } from "./tester/metaFetcher.ts";
@@ -32,6 +32,14 @@ interface RunConfigOverride {
 }
 
 // ── Global State ─────────────────────────────────────────────────────────────
+let currentConfig: any = null;
+
+async function loadConfig(): Promise<any> {
+  const text = await Bun.file("config.yaml").text();
+  currentConfig = parse(text);
+  return currentConfig;
+}
+
 const _events: any[] = [];
 let _eventIdCounter = 0;
 
@@ -93,14 +101,11 @@ app.get("/", async (c) => {
   }
 });
 
-app.get("/api/config", async (c) => {
-  try {
-    const text = await Bun.file("config.yaml").text();
-    const config = parse(text);
-    return c.json(config);
-  } catch (e: any) {
-    return c.json({ ok: false, msg: e.message || String(e) }, 500);
+app.get("/api/config", (c) => {
+  if (!currentConfig) {
+    return c.json({ ok: false, msg: "配置未加载" }, 500);
   }
+  return c.json(currentConfig);
 });
 
 // ── Profiles Management ──────────────────────────────────────────────────────
@@ -192,6 +197,18 @@ app.get("/api/history/:runId", (c) => {
     return c.json({ ok: true, run_id: runId, results });
   } catch (e: any) {
     return c.json({ ok: false, msg: e.message || String(e) });
+  }
+});
+
+// ── Compare Runs ─────────────────────────────────────────────────────────────
+app.get("/api/compare/:runId1/:runId2", (c) => {
+  const runId1 = c.req.param("runId1");
+  const runId2 = c.req.param("runId2");
+  try {
+    const comparison = compareRuns(runId1, runId2);
+    return c.json({ ok: true, comparison });
+  } catch (e: any) {
+    return c.json({ ok: false, msg: e.message || String(e) }, 500);
   }
 });
 
@@ -321,8 +338,7 @@ app.post("/api/run", async (c) => {
 
 // ── Run Pipeline Implementation ──────────────────────────────────────────────
 async function runPipeline(overrides: RunConfigOverride = {}) {
-  const configText = await Bun.file("config.yaml").text();
-  const config = parse(configText);
+  const config = await loadConfig();
 
   // Apply UI overrides
   if (overrides.api_keys && overrides.api_keys.length > 0) {
@@ -535,6 +551,18 @@ function buildScored(results: Record<string, ModelResult[]>, config: any): Recor
 
   return output;
 }
+
+// ── Load Config & Start File Watcher ─────────────────────────────────────────
+await loadConfig();
+
+watch("config.yaml", (event) => {
+  if (event === "change") {
+    console.log("🔄 配置文件已更新，重新加载...");
+    loadConfig()
+      .then(() => console.log("✅ 配置重新加载成功"))
+      .catch((e) => console.error("❌ 配置重新加载失败:", e.message || e));
+  }
+});
 
 // ── Start Server ─────────────────────────────────────────────────────────────
 serve({

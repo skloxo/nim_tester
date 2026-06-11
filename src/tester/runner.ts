@@ -284,8 +284,12 @@ export class TestRunner {
         // Key 轮换选择（锁外/Semaphore 外）
         const apiKey = await this.rotator.next();
 
+        const timeout = caseItem.timeout || 30000;
+
         // 仅在 HTTP 请求执行段申请并发 Semaphore，保持 sleep 独立
         await this.sem.acquire();
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), timeout);
         let raw: any;
         let elapsed = 0.0;
         try {
@@ -296,11 +300,15 @@ export class TestRunner {
               "Accept": streaming ? "text/event-stream" : "application/json",
             };
             const payload = caseItem.buildPayload(modelId);
-            return this.doRequest(url, payload, headers, streaming, clientKwargs);
+            return this.doRequest(url, payload, headers, streaming, {
+              ...clientKwargs,
+              signal: controller.signal,
+            });
           });
           raw = resData;
           elapsed = elapsedMs;
         } finally {
+          clearTimeout(timeoutId);
           this.sem.release();
         }
 
@@ -317,6 +325,18 @@ export class TestRunner {
         };
         return result;
       } catch (e: any) {
+        if (e.name === "AbortError") {
+          return {
+            model_id: modelId,
+            category,
+            case_name: caseItem.name,
+            test: caseItem.test,
+            status: "skip",
+            reason: `Timeout after ${caseItem.timeout || 30000}ms`,
+            success: false,
+            elapsed_ms: caseItem.timeout || 30000,
+          };
+        }
         if (e instanceof HTTPStatusError) {
           const status = e.status;
           if (status === 404 || status === 422) {

@@ -266,6 +266,44 @@ export function listRuns(limit: number = 20): RunRecord[] {
   return rows;
 }
 
+export function compareRuns(runId1: string, runId2: string): any {
+  const results1 = getRunResults(runId1);
+  const results2 = getRunResults(runId2);
+
+  const map1 = new Map(results1.map((r: any) => [`${r.model_id}:${r.category}`, r]));
+  const map2 = new Map(results2.map((r: any) => [`${r.model_id}:${r.category}`, r]));
+
+  const allKeys = new Set([...map1.keys(), ...map2.keys()]);
+  const diffs: any[] = [];
+
+  for (const key of allKeys) {
+    const r1 = map1.get(key);
+    const r2 = map2.get(key);
+    if (r1 && r2) {
+      const scoreDiff = (r2.score || 0) - (r1.score || 0);
+      const tpsDiff = (r2.avg_tps || 0) - (r1.avg_tps || 0);
+      if (Math.abs(scoreDiff) > 0.1 || Math.abs(tpsDiff) > 0.1) {
+        diffs.push({
+          model_id: r1.model_id,
+          category: r1.category,
+          score_before: r1.score,
+          score_after: r2.score,
+          score_diff: scoreDiff,
+          tps_before: r1.avg_tps,
+          tps_after: r2.avg_tps,
+          tps_diff: tpsDiff,
+        });
+      }
+    } else if (r1) {
+      diffs.push({ model_id: r1.model_id, category: r1.category, status: 'removed' });
+    } else if (r2) {
+      diffs.push({ model_id: r2.model_id, category: r2.category, status: 'added' });
+    }
+  }
+
+  return { run1: runId1, run2: runId2, diffs };
+}
+
 export function getRunResults(runId: string): any[] {
   const db = getDb();
   const rows = db.prepare(`

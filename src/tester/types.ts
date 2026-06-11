@@ -4,6 +4,7 @@ export interface TestCase {
   test: string;
   required: boolean;
   tags: string[];
+  timeout?: number;
   buildPayload: (modelId: string) => Record<string, any>;
   parseResult: (responseJson: any, elapsedMs: number) => Record<string, any>;
 }
