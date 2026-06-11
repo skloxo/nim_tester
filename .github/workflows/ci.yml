@@ -46,11 +46,23 @@ jobs:
 
       - name: Check coverage threshold
         run: |
+          # Show coverage output for debugging
+          echo "Coverage output:"
+          cat coverage-output.txt | tail -20
+          echo "---"
+          
           # Extract line coverage percentage (handle different formats)
-          COVERAGE_LINE=$(grep -E "All files" coverage-output.txt | sed 's/.*|//' | awk '{print $1}' | tr -d '%' | head -1)
+          COVERAGE_LINE=$(grep "All files" coverage-output.txt | awk -F'|' '{print $3}' | tr -d ' %')
           
           if [ -z "$COVERAGE_LINE" ]; then
-            echo "⚠️ Could not extract coverage percentage"
+            echo "⚠️ Could not extract coverage percentage from coverage-output.txt"
+            echo "Trying alternative extraction..."
+            COVERAGE_LINE=$(grep -oP '\d+\.\d+(?=\s*\|)' coverage-output.txt | head -2)
+            COVERAGE_LINE=$(echo "$COVERAGE_LINE" | tail -1)
+          fi
+          
+          if [ -z "$COVERAGE_LINE" ]; then
+            echo "❌ Could not extract coverage percentage"
             exit 1
           fi
           
