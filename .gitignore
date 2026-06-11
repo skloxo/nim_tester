@@ -39,3 +39,6 @@ history.db-wal
 history.db-shm
 profiles.json
 results/
+
+# Agent local tracking & handover files
+.agent/
