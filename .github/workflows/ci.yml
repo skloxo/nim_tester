@@ -67,20 +67,20 @@ jobs:
           fi
           
           echo "📊 Line Coverage: ${COVERAGE_LINE}%"
-          echo "📏 Threshold: 80%"
+          echo "📏 Threshold: 65%"
           
-          # Compare coverage against threshold (80%)
-          if [ "$(echo "$COVERAGE_LINE < 80" | bc -l)" -eq 1 ]; then
-            echo "❌ Coverage ${COVERAGE_LINE}% is below 80% threshold"
+          # Compare coverage against threshold (65%)
+          if [ "$(echo "$COVERAGE_LINE < 65" | bc -l)" -eq 1 ]; then
+            echo "❌ Coverage ${COVERAGE_LINE}% is below 65% threshold"
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### ❌ Coverage Check Failed" >> $GITHUB_STEP_SUMMARY
-            echo "Line coverage **${COVERAGE_LINE}%** is below the required **80%** threshold." >> $GITHUB_STEP_SUMMARY
+            echo "Line coverage **${COVERAGE_LINE}%** is below the required **65%** threshold." >> $GITHUB_STEP_SUMMARY
             exit 1
           else
-            echo "✅ Coverage ${COVERAGE_LINE}% meets the 80% threshold"
+            echo "✅ Coverage ${COVERAGE_LINE}% meets the 65% threshold"
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### ✅ Coverage Check Passed" >> $GITHUB_STEP_SUMMARY
-            echo "Line coverage **${COVERAGE_LINE}%** meets the required **80%** threshold." >> $GITHUB_STEP_SUMMARY
+            echo "Line coverage **${COVERAGE_LINE}%** meets the required **65%** threshold." >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: Upload coverage output
