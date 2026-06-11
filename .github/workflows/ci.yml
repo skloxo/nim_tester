@@ -26,7 +26,7 @@ jobs:
         run: bun run compile-check
 
       - name: Run tests with coverage
-        run: bun test --coverage 2>&1 > coverage-output.txt || true
+        run: bun test --coverage > coverage-output.txt 2>&1 || true
 
       - name: Generate coverage summary
         run: |
