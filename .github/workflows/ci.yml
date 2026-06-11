@@ -46,8 +46,8 @@ jobs:
 
       - name: Check coverage threshold
         run: |
-          # Extract line coverage percentage
-          COVERAGE_LINE=$(grep -E "All files" coverage-output.txt | awk '{print $4}' | tr -d '%')
+          # Extract line coverage percentage (handle different formats)
+          COVERAGE_LINE=$(grep -E "All files" coverage-output.txt | sed 's/.*|//' | awk '{print $1}' | tr -d '%' | head -1)
           
           if [ -z "$COVERAGE_LINE" ]; then
             echo "⚠️ Could not extract coverage percentage"
