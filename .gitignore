@@ -43,3 +43,6 @@ results/
 
 # Agent local tracking & handover files
 .agent/
+
+# Internal docs (not uploaded to git)
+docs/internal/
