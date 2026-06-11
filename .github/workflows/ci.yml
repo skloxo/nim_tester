@@ -25,8 +25,34 @@ jobs:
       - name: TypeScript compilation check
         run: bun run compile-check
 
-      - name: Run tests
-        run: bun test
+      - name: Run tests with coverage
+        run: bun test --coverage
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 7
+
+      - name: Generate coverage summary
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "## Code Coverage Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f coverage/coverage-summary.json ]; then
+            cat coverage/coverage-summary.json | jq -r '
+              "### Coverage Summary\n",
+              "| Metric | Coverage |",
+              "|--------|----------|",
+              "| Lines | \(.total.lines.pct)% |",
+              "| Functions | \(.total.functions.pct)% |",
+              "| Branches | \(.total.branches.pct)% |",
+              "| Statements | \(.total.statements.pct)% |"
+            ' >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Coverage report generated. Check artifacts for details." >> $GITHUB_STEP_SUMMARY
+          fi
 
   lint:
     runs-on: ubuntu-latest

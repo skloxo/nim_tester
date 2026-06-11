@@ -8,7 +8,8 @@
     "server": "bun run src/server.ts",
     "dev": "bun --watch src/server.ts",
     "compile-check": "tsc --noEmit",
-    "test": "bun test"
+    "test": "bun test",
+    "test:coverage": "bun test --coverage"
   },
   "dependencies": {
     "exceljs": "^4.4.0",
