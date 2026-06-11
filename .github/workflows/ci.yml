@@ -44,6 +44,33 @@ jobs:
           echo "- **Line Coverage**: ${COVERAGE_LINE:-N/A}" >> $GITHUB_STEP_SUMMARY
           echo "- **Function Coverage**: ${COVERAGE_FUNC:-N/A}" >> $GITHUB_STEP_SUMMARY
 
+      - name: Check coverage threshold
+        run: |
+          # Extract line coverage percentage
+          COVERAGE_LINE=$(grep -E "All files" coverage-output.txt | awk '{print $4}' | tr -d '%')
+          
+          if [ -z "$COVERAGE_LINE" ]; then
+            echo "⚠️ Could not extract coverage percentage"
+            exit 1
+          fi
+          
+          echo "📊 Line Coverage: ${COVERAGE_LINE}%"
+          echo "📏 Threshold: 80%"
+          
+          # Compare coverage against threshold (80%)
+          if [ "$(echo "$COVERAGE_LINE < 80" | bc -l)" -eq 1 ]; then
+            echo "❌ Coverage ${COVERAGE_LINE}% is below 80% threshold"
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### ❌ Coverage Check Failed" >> $GITHUB_STEP_SUMMARY
+            echo "Line coverage **${COVERAGE_LINE}%** is below the required **80%** threshold." >> $GITHUB_STEP_SUMMARY
+            exit 1
+          else
+            echo "✅ Coverage ${COVERAGE_LINE}% meets the 80% threshold"
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### ✅ Coverage Check Passed" >> $GITHUB_STEP_SUMMARY
+            echo "Line coverage **${COVERAGE_LINE}%** meets the required **80%** threshold." >> $GITHUB_STEP_SUMMARY
+          fi
+
       - name: Upload coverage output
         uses: actions/upload-artifact@v4
         if: always()
