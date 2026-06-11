@@ -375,7 +375,7 @@ export class TestRunner {
 
     for (const [category, models] of Object.entries(groups)) {
       console.log(`  🔬 [${category}] 开始测试 ${models.length} 个模型...`);
-      const catResults: ModelResult[] = [];
+      const catResults: ModelResult[][] = [];
       const modelPromises = models.map(async (m, idx) => {
         const modelResults = await this.runModel(m, category, clientKwargs);
         catResults[idx] = modelResults;
