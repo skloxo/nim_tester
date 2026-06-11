@@ -6,6 +6,7 @@ export class NetworkSelector {
   public autoSelect: boolean;
   public forceMode: "direct" | "proxy";
   private apiKey: string;
+  private apiUrl: string;
 
   constructor(config: any) {
     this.config = config;
@@ -16,11 +17,12 @@ export class NetworkSelector {
     this.forceMode = config.network?.force_mode || "direct";
     // Get the first valid API key
     this.apiKey = (config.api_keys || []).find((k: string) => k.trim())?.trim() || "";
+    this.apiUrl = (config.api?.base_url || "https://integrate.api.nvidia.com/v1").replace(/\/+$/, "");
   }
 
   private async measureLatency(proxy: string | null): Promise<number> {
     const latencies: number[] = [];
-    const url = "https://integrate.api.nvidia.com/v1/models";
+    const url = `${this.apiUrl}/models`;
 
     for (let i = 0; i < this.testCount; i++) {
       try {

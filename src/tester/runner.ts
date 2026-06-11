@@ -1,4 +1,4 @@
-import type { TestCase, ModelResult } from "./types.ts";
+import type { TestCase, ModelResult, AppConfig } from "./types.ts";
 import { getCases } from "./cases.ts";
 import { NetworkSelector } from "./network.ts";
 import { CircuitBreaker } from "./circuitBreaker.ts";
@@ -133,7 +133,7 @@ export class Semaphore {
 }
 
 export class TestRunner {
-  private config: any;
+  private config: AppConfig;
   private mode: string;
   private baseUrl: string;
   private chatEp: string;
@@ -148,7 +148,7 @@ export class TestRunner {
   private sem: Semaphore;
   private breaker: CircuitBreaker;
 
-  constructor(config: any, mode: string, progressCallback?: (results: ModelResult[]) => Promise<void> | void) {
+  constructor(config: AppConfig, mode: string, progressCallback?: (results: ModelResult[]) => Promise<void> | void) {
     this.config = config;
     this.mode = mode;
     this.baseUrl = (config.api?.base_url || "").replace(/\/+$/, "");

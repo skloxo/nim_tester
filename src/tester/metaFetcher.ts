@@ -4,6 +4,7 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 
 const CATALOG_PATH = join(import.meta.dir, "../../data/model_catalog.json");
 const RAW_HF_DIR = join(import.meta.dir, "../../data/hf_raw");
+const LOCAL_KB_PATH = join(import.meta.dir, "../../data/local_kb.json");
 
 let catalogCache: Record<string, any> = {};
 let catalogLoaded = false;
@@ -27,8 +28,7 @@ function loadCatalog(): Record<string, any> {
   return catalogCache;
 }
 
-const LOCAL_KB: Record<string, any> = {
-  // Meta Llama 3.x
+const LOCAL_KB_FALLBACK: Record<string, any> = {
   "llama-3.1-8b":   { param_count: 8,   max_context: 128000, release_date: "2024-07" },
   "llama-3.1-70b":  { param_count: 70,  max_context: 128000, release_date: "2024-07" },
   "llama-3.1-405b": { param_count: 405, max_context: 128000, release_date: "2024-07" },
@@ -39,25 +39,21 @@ const LOCAL_KB: Record<string, any> = {
   "llama-3.3-70b":  { param_count: 70,  max_context: 128000, release_date: "2024-12" },
   "llama-4-maverick-17b": { param_count: 17, active_params: 17, max_context: 1000000, release_date: "2025-04" },
   "llama2-70b":     { param_count: 70,  max_context: 4096,   release_date: "2023-07" },
-  // Mistral
   "mistral-7b":     { param_count: 7,   max_context: 32768,  release_date: "2023-09" },
   "mistral-large":  { param_count: 123, max_context: 128000, release_date: "2024-02" },
   "mixtral-8x7b":   { param_count: 56,  active_params: 14,   max_context: 32768, release_date: "2023-12" },
   "mixtral-8x22b":  { param_count: 176, active_params: 44,   max_context: 65536, release_date: "2024-04" },
   "mistral-large-3-675b": { param_count: 675, max_context: 128000, release_date: "2025-05" },
   "mistral-medium-3.5-128b": { param_count: 128, max_context: 128000, release_date: "2025-04" },
-  // Google Gemma
   "gemma-2-2b":     { param_count: 2,   max_context: 8192,   release_date: "2024-06" },
   "gemma-2b":       { param_count: 2,   max_context: 8192,   release_date: "2024-02" },
   "gemma-3-4b":     { param_count: 4,   max_context: 128000, release_date: "2025-03" },
   "gemma-3-12b":    { param_count: 12,  max_context: 128000, release_date: "2025-03" },
   "gemma-4-31b":    { param_count: 31,  max_context: 1000000, release_date: "2025-04" },
-  // Microsoft Phi
   "phi-3-vision-128k": { param_count: 4.2, max_context: 128000, release_date: "2024-05" },
   "phi-4-mini":     { param_count: 3.8, max_context: 128000, release_date: "2025-02" },
   "phi-4-multimodal": { param_count: 5.6, max_context: 128000, release_date: "2025-02" },
   "phi-3.5-moe":    { param_count: 42,  active_params: 7,   max_context: 128000, release_date: "2024-08" },
-  // NVIDIA Nemotron
   "nemotron-4-340b":     { param_count: 340, max_context: 4096,   release_date: "2024-06" },
   "nemotron-70b":        { param_count: 70,  max_context: 128000, release_date: "2024-10" },
   "nemotron-51b":        { param_count: 51,  max_context: 128000, release_date: "2024-10" },
@@ -67,38 +63,51 @@ const LOCAL_KB: Record<string, any> = {
   "nemotron-ultra-253b": { param_count: 253, max_context: 128000, release_date: "2025-03" },
   "nemotron-nano-12b-v2-vl": { param_count: 12, max_context: 32768, release_date: "2025-03" },
   "nemotron-3-nano-30b": { param_count: 30, active_params: 3, max_context: 128000, release_date: "2025-04" },
-  // DeepSeek
   "deepseek-coder-6.7b": { param_count: 6.7, max_context: 16384, release_date: "2023-11" },
   "deepseek-r1":         { param_count: 671, active_params: 37,  max_context: 128000, release_date: "2025-01" },
   "deepseek-v4-flash":   { param_count: 671, active_params: 37,  max_context: 128000, release_date: "2025-05" },
   "deepseek-v4-pro":     { param_count: 671, active_params: 37,  max_context: 128000, release_date: "2025-05" },
-  // Embedding
   "bge-m3":              { param_count: 0.57, embed_dim: 1024, max_context: 8192,  release_date: "2024-01" },
   "arctic-embed-l":      { param_count: 0.33, embed_dim: 1024, max_context: 512,   release_date: "2024-04" },
   "nv-embed-v1":         { param_count: 7.8,  embed_dim: 4096, max_context: 32768, release_date: "2024-05" },
   "nv-embedqa-e5-v5":    { param_count: 0.7,  embed_dim: 1024, max_context: 512,   release_date: "2024-06" },
   "llama-3.2-nv-embedqa-1b": { param_count: 1, embed_dim: 2048, max_context: 8192, release_date: "2024-10" },
-  // Qwen
   "qwen3-coder-480b":    { param_count: 480, active_params: 35, max_context: 32768, release_date: "2025-05" },
   "qwen3-next-80b":      { param_count: 80,  active_params: 3,  max_context: 128000, release_date: "2025-05" },
   "qwen3.5-122b":        { param_count: 122, active_params: 10, max_context: 128000, release_date: "2025-05" },
   "qwen3.5-397b":        { param_count: 397, active_params: 17, max_context: 128000, release_date: "2025-05" },
-  // Starcoder
   "starcoder2-15b":      { param_count: 15, max_context: 16384, release_date: "2024-02" },
-  // VLM
   "llava":               { param_count: 13, max_context: 4096,  release_date: "2023-10" },
   "neva-22b":            { param_count: 22, max_context: 4096,  release_date: "2023-12" },
   "fuyu-8b":             { param_count: 8,  max_context: 16384, release_date: "2023-10" },
   "kosmos-2":            { param_count: 1.6, max_context: 4096,  release_date: "2023-06" },
-  // Others
   "ibm/granite-34b":     { param_count: 34, max_context: 8192,  release_date: "2024-09" },
 };
+
+let localKbCache: Record<string, any> | null = null;
+
+function loadLocalKb(): Record<string, any> {
+  if (localKbCache) {
+    return localKbCache;
+  }
+  if (existsSync(LOCAL_KB_PATH)) {
+    try {
+      localKbCache = JSON.parse(readFileSync(LOCAL_KB_PATH, "utf-8"));
+      console.log(`  [META] 已加载本地 KB：${Object.keys(localKbCache!).length} 个模型 (${LOCAL_KB_PATH})`);
+      return localKbCache!;
+    } catch (e: any) {
+      console.warn(`  [META] local_kb.json 加载失败: ${e.message || e}，使用内置 fallback`);
+    }
+  }
+  localKbCache = LOCAL_KB_FALLBACK;
+  return localKbCache;
+}
 
 function matchKb(modelId: string): Record<string, any> {
   const mid = modelId.toLowerCase();
   let bestMatch: Record<string, any> = {};
   let bestLen = 0;
-  for (const [fragment, data] of Object.entries(LOCAL_KB)) {
+  for (const [fragment, data] of Object.entries(loadLocalKb())) {
     if (mid.includes(fragment.toLowerCase()) && fragment.length > bestLen) {
       bestMatch = { ...data };
       bestLen = fragment.length;

@@ -1,4 +1,5 @@
 import type { ModelResult, ScoredModel } from "./types.ts";
+import { extractMetaFromResults } from "./types.ts";
 
 // 各测试用例权重（满分 90，另 10 分来自速度）
 export const TEST_WEIGHTS: Record<string, number> = {
@@ -85,42 +86,9 @@ export function scoreModel(
   const avg_tps = tpsList.length > 0 ? tpsList.reduce((a, b) => a + b, 0) / tpsList.length : 0;
   const avg_elapsed = elapsedList.length > 0 ? elapsedList.reduce((a, b) => a + b, 0) / elapsedList.length : 0;
 
-  // 提取 max_context 和 param_count
-  let finalMaxContext = maxContext;
-  if (finalMaxContext === undefined) {
-    for (const r of results) {
-      if (typeof r.max_context === "number") {
-        finalMaxContext = r.max_context;
-        break;
-      }
-      if (r.meta_json && typeof r.meta_json.max_context === "number") {
-        finalMaxContext = r.meta_json.max_context;
-        break;
-      }
-      if (r.meta && typeof r.meta.max_context === "number") {
-        finalMaxContext = r.meta.max_context;
-        break;
-      }
-    }
-  }
-
-  let finalParamCount = paramCount;
-  if (finalParamCount === undefined) {
-    for (const r of results) {
-      if (typeof r.param_count === "number") {
-        finalParamCount = r.param_count;
-        break;
-      }
-      if (r.meta_json && typeof r.meta_json.param_count === "number") {
-        finalParamCount = r.meta_json.param_count;
-        break;
-      }
-      if (r.meta && typeof r.meta.param_count === "number") {
-        finalParamCount = r.meta.param_count;
-        break;
-      }
-    }
-  }
+  const extracted = extractMetaFromResults(results);
+  const finalMaxContext = maxContext ?? extracted.maxContext;
+  const finalParamCount = paramCount ?? extracted.paramCount;
 
   let score = base;
 
