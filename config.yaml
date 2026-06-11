@@ -1,0 +1,79 @@
+# API 模型测试框架配置文件
+
+# ─── 接口配置 ──────────────────────────────────────────────────────────────────
+api:
+  base_url: "https://integrate.api.nvidia.com/v1"
+  models_endpoint: "/models"
+  chat_endpoint: "/chat/completions"
+  embeddings_endpoint: "/embeddings"
+
+# ─── API 密钥列表（支持多个，程序自动轮换）─────────────────────────────────────
+api_keys:
+  - "YOUR_NVIDIA_API_KEY_HERE"
+
+# ─── 网络配置 ──────────────────────────────────────────────────────────────────
+network:
+  proxy: "http://127.0.0.1:7897"    # 代理地址，留空则不使用代理
+  timeout: 30                        # 请求超时（秒）
+  latency_test_count: 3              # 延迟测试次数（取平均值）
+  # auto_select: true → 自动测速选最优；false → 强制使用 force_mode
+  auto_select: true
+  force_mode: "direct"               # direct | proxy（仅 auto_select=false 时生效）
+
+# ─── 测试行为配置 ─────────────────────────────────────────────────────────────
+testing:
+  concurrency: 10                    # 并发测试数量（提高加速）
+  retry_count: 2                     # 失败重试次数（共 3 次机会，每次换下一个 Key）
+  request_interval: 0.2              # 请求间隔（秒）
+  output_dir: "./results"            # 测试结果输出目录
+  save_json: true                    # 保存 JSON 原始结果
+  save_excel: true                   # 保存 Excel 报告
+  required_only: false               # true=只跑必选用例（快速扫描）；false=全量测试
+  # ── 限速配置（NVIDIA 免费层：每 key 每分钟 40 次）──────────────────────────
+  rate_limit_per_key: 40             # 每个 API Key 每分钟最大请求数（0=不限速）
+  rate_limit_window: 60              # 限速窗口（秒）
+
+# ─── 模型分组关键词匹配规则（优先级从上到下）─────────────────────────────────
+model_categories:
+  text_embedding:
+    keywords: ["embed", "embedding", "e5-", "bge-", "gte-", "minilm", "nv-embed"]
+    description: "文本嵌入模型"
+  multimodal_embedding:
+    keywords: ["clip", "visual-embed", "image-embed", "vlm-embed", "nv-clip"]
+    description: "图文嵌入模型"
+  reranker:
+    keywords: ["rerank", "cross-encoder", "nv-rerank"]
+    description: "重排序模型"
+  vision_language:
+    keywords: [
+      # 通用视觉关键词
+      "vision", "vlm", "llava", "visual",
+      # 精确后缀模式（避免 eval/evolve 误匹配）
+      "-vl-", "-vl", "vl-", "vl/",
+      # 多模态
+      "multimodal", "phi-3-vision", "phi-4-multimodal",
+      # 图文理解品牌
+      "pixtral", "qwen2-vl", "intern-vl", "cogvlm", "blip",
+      # NVIDIA VLM 品牌
+      "neva", "vila", "fuyu", "kosmos", "deplot",
+      # NVIDIA nemotron VL 系列
+      "nemotron-nano-vl", "nemoretriever-vlm", "nemotron-nano-12b-v2-vl",
+      "llama-nemotron-embed-vl", "llama-3.2-nemoretriever-1b-vlm",
+      "llama-3.1-nemotron-nano-vl",
+    ]
+    description: "视觉语言模型（VLM）"
+  image_generation:
+    keywords: ["stable-diffusion", "sdxl", "flux", "dall-e", "imagen", "sd-", "nvclip-gen"]
+    description: "图像生成模型"
+  audio:
+    keywords: ["whisper", "tts", "speech", "audio", "asr", "voice"]
+    description: "语音/音频模型"
+  code:
+    keywords: ["code", "codex", "starcoder", "deepseek-coder", "qwen-coder", "wizard-coder"]
+    description: "代码专用模型"
+  reasoning:
+    keywords: ["o1", "o3", "r1", "qwq", "deepseek-r", "think", "reason"]
+    description: "推理/思维链模型"
+  general_chat:
+    keywords: []                     # 兜底分类：不匹配以上任何类别的模型
+    description: "通用对话模型"

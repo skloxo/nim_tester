@@ -1,0 +1,304 @@
+{
+  "_id": "67b52d4a824d77f2bba8b0af",
+  "id": "microsoft/Phi-4-mini-instruct",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "phi3",
+    "text-generation",
+    "nlp",
+    "code",
+    "conversational",
+    "custom_code",
+    "multilingual",
+    "ar",
+    "zh",
+    "cs",
+    "da",
+    "nl",
+    "en",
+    "fi",
+    "fr",
+    "de",
+    "he",
+    "hu",
+    "it",
+    "ja",
+    "ko",
+    "no",
+    "pl",
+    "pt",
+    "ru",
+    "es",
+    "sv",
+    "th",
+    "tr",
+    "uk",
+    "arxiv:2503.01743",
+    "license:mit",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 1538981,
+  "likes": 740,
+  "modelId": "microsoft/Phi-4-mini-instruct",
+  "author": "microsoft",
+  "sha": "cfbefacb99257ffa30c83adab238a50856ac3083",
+  "lastModified": "2025-12-10T20:24:40.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Can you provide ways to eat combinations of bananas and dragonfruits?"
+        }
+      ]
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "Phi3ForCausalLM"
+    ],
+    "auto_map": {
+      "AutoConfig": "configuration_phi3.Phi3Config",
+      "AutoModelForCausalLM": "modeling_phi3.Phi3ForCausalLM",
+      "AutoTokenizer": "Xenova/gpt-4o"
+    },
+    "model_type": "phi3",
+    "tokenizer_config": {
+      "bos_token": "<|endoftext|>",
+      "chat_template": "{% for message in messages %}{% if message['role'] == 'system' and 'tools' in message and message['tools'] is not none %}{{ '<|' + message['role'] + '|>' + message['content'] + '<|tool|>' + message['tools'] + '<|/tool|>' + '<|end|>' }}{% else %}{{ '<|' + message['role'] + '|>' + message['content'] + '<|end|>' }}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ '<|assistant|>' }}{% else %}{{ eos_token }}{% endif %}",
+      "eos_token": "<|endoftext|>",
+      "pad_token": "<|endoftext|>",
+      "unk_token": "<|endoftext|>"
+    }
+  },
+  "cardData": {
+    "language": [
+      "multilingual",
+      "ar",
+      "zh",
+      "cs",
+      "da",
+      "nl",
+      "en",
+      "fi",
+      "fr",
+      "de",
+      "he",
+      "hu",
+      "it",
+      "ja",
+      "ko",
+      "no",
+      "pl",
+      "pt",
+      "ru",
+      "es",
+      "sv",
+      "th",
+      "tr",
+      "uk"
+    ],
+    "library_name": "transformers",
+    "license": "mit",
+    "license_link": "https://huggingface.co/microsoft/Phi-4-mini-instruct/resolve/main/LICENSE",
+    "pipeline_tag": "text-generation",
+    "tags": [
+      "nlp",
+      "code"
+    ],
+    "widget": [
+      {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Can you provide ways to eat combinations of bananas and dragonfruits?"
+          }
+        ]
+      }
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "CODE_OF_CONDUCT.md"
+    },
+    {
+      "rfilename": "LICENSE"
+    },
+    {
+      "rfilename": "NOTICE.md"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "SECURITY.md"
+    },
+    {
+      "rfilename": "added_tokens.json"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "configuration_phi3.py"
+    },
+    {
+      "rfilename": "data_summary_card.md"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "merges.txt"
+    },
+    {
+      "rfilename": "model-00001-of-00002.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00002.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "modeling_phi3.py"
+    },
+    {
+      "rfilename": "sample_finetune.py"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    },
+    {
+      "rfilename": "vocab.json"
+    }
+  ],
+  "spaces": [
+    "pliny-the-prompter/obliteratus",
+    "qimma/leaderboard",
+    "eduagarcia/open_pt_llm_leaderboard",
+    "kevinwang676/F5-TTS",
+    "Luigi/ZeroGPU-LLM-Inference",
+    "aizip-dev/SLM-RAG-Arena",
+    "mrfakename/DMOSpeech2",
+    "lfoppiano/document-qa",
+    "jairwaal/image",
+    "aipicasso/emi-3",
+    "merterbak/phi-4",
+    "yl4579/DMOSpeech2-demo",
+    "zchipitt/E2-F5-TTS",
+    "umint/openwebui",
+    "stiv14/pdf-multilanguage-qa-role",
+    "JyuViole/E2-F5-TTS-RUS",
+    "mcjhn/ai",
+    "Jakob08/moneychatbot",
+    "eduagarcia/multilingual-tokenizer-leaderboard",
+    "sciencialab/document-qa-dev",
+    "Secondprinsipal/image",
+    "Abhayshinde/OPENENV_RL_08_04",
+    "SombreroCat/SombrerO1.0",
+    "JLouisBiz/GNU-LLM-Integration",
+    "sizzlebop/ZeroGPU-LLM-Inference",
+    "SarowarSaurav/Finetuned-SLM",
+    "nsschw/TheUnsampledTruth",
+    "huggingfaceramki/Ramkiran_searchgpt",
+    "cafierom/MoleculeAgent",
+    "itsasutosha/SmartScribe",
+    "Umong/MayerBhasha",
+    "Kodacoda/obliteratus",
+    "Otter21/OPENENV_RL_01",
+    "gp5428354/microsoft-Phi-4-mini-instruct",
+    "thuyentruong/sentence-sentiment-analysis",
+    "TKgumi/test.db",
+    "person9601/First_agent_templatePers96-01",
+    "dalecc08/First_agent_template",
+    "radussad/mistral-rag",
+    "Segizu/phi4",
+    "Akshayram1/ai_resume_matching_tool",
+    "tfshubh/JustiX",
+    "aimad12/phi4-mini-chatbot",
+    "Julyana/jupradoai-assistant",
+    "hmrizal/CSVBot-Llama2",
+    "tahsinhasem/rest",
+    "Ethanc103/llkkfkkxjtxj",
+    "Ethanc103/qwertyujhbvcxdfrtgyujk",
+    "Vaibhav84/RecommendationAPI",
+    "venkatviswa/flowchart-to-text",
+    "IronWall/P4-SecurityLM",
+    "IronWolfAI/P4-CySec",
+    "JCTN/E2-F5-TTS",
+    "PragmaticPete/pds-readmission-risk-app",
+    "venkatviswa/flowchart-to-text-v1",
+    "makisa/0",
+    "makisa/E2-F5-TTSfa",
+    "ArgaKhan/smolagent_course_first",
+    "aubrigene949/Final_Assignment_Template",
+    "Rjsign/E2-F5-TTS",
+    "abdullahalioo/wow",
+    "asfilcnx3/Do_questions_from_PDF_ES",
+    "mamoon63/phi3mini",
+    "abdullahalioo/vision",
+    "KWRegan/LIFgen",
+    "abdullahalioo/chats",
+    "raffaeleterribile/Final_Assignment",
+    "adptbyt/E2-F5-TTS",
+    "aaurelions/word_keeper",
+    "lgris/E2-F5-TTS",
+    "KavinduHansaka/grammar-fixer-phi4-mini",
+    "mayurdas1991/E2-F5-TTS",
+    "abdullahalioo/wow2",
+    "GTFRFYUHEYUIWER7TYUIO/E2-F5-TTS",
+    "MAAZJATOI67867487/E2-F5-TTS",
+    "loki765443we/E2-F5-TTS",
+    "Noct01/E2-F5-TTS-Fixed",
+    "volfenstein/LORA_Phi4_Instruction_Story_Generator",
+    "gampala1234/phi4mini",
+    "Jenssudibyo/tts-kltraid",
+    "ayman3000/simple_chat",
+    "psargsyan/team-42-boe-cambridge",
+    "kotlarmilos/dotnet-runtime",
+    "kabotarnet01/metallama",
+    "Siratish/F5-TTS_SmoothCache",
+    "spanexx/TTS",
+    "blueda9232/ai",
+    "durukan/scigpt",
+    "BBBNBNNBBVBB/E2-F5-TTS",
+    "ncjkdcei/mmm",
+    "melrrr/melTTS",
+    "John6666/E2-F5-TTS",
+    "John6666/E2-F5-TTS-rc",
+    "danhtran2mind/Vi-F5-TTS",
+    "mcamargo00/math-solution-classifier",
+    "Emmiq/EmmiSpace",
+    "mcmillaneric050-gmail-com/F5-TTS",
+    "rampugal/miniApp",
+    "louisepxllock/First-chatbotgpt2spare",
+    "Umadevi0305/Audio-F5TTS"
+  ],
+  "createdAt": "2025-02-19T01:00:58.000Z",
+  "inference": "warm",
+  "usedStorage": 7687590311
+}

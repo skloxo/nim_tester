@@ -1,0 +1,1264 @@
+{
+  "01-ai/yi-large": {
+    "id": "01-ai/yi-large",
+    "owned_by": "01-ai",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "abacusai/dracarys-llama-3.1-70b-instruct": {
+    "id": "abacusai/dracarys-llama-3.1-70b-instruct",
+    "owned_by": "abacusai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70,
+    "max_context": 128000,
+    "release_date": "2024-07",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 22
+  },
+  "adept/fuyu-8b": {
+    "id": "adept/fuyu-8b",
+    "owned_by": "adept",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "max_context": 16384,
+    "release_date": "2023-10",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 31
+  },
+  "ai21labs/jamba-1.5-large-instruct": {
+    "id": "ai21labs/jamba-1.5-large-instruct",
+    "owned_by": "ai21labs",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "aisingapore/sea-lion-7b-instruct": {
+    "id": "aisingapore/sea-lion-7b-instruct",
+    "owned_by": "aisingapore",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 7,
+    "release_date": "2024-02",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en",
+      "zh",
+      "id",
+      "ms",
+      "tl"
+    ],
+    "age_months": 27
+  },
+  "baai/bge-m3": {
+    "id": "baai/bge-m3",
+    "owned_by": "baai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 0.57,
+    "max_context": 8192,
+    "embed_dim": 1024,
+    "release_date": "2024-01",
+    "hf_pipeline_tag": "sentence-similarity",
+    "hf_category": "text_embedding",
+    "age_months": 28
+  },
+  "bigcode/starcoder2-15b": {
+    "id": "bigcode/starcoder2-15b",
+    "owned_by": "bigcode",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 15,
+    "max_context": 16384,
+    "release_date": "2024-02",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 27
+  },
+  "bytedance/seed-oss-36b-instruct": {
+    "id": "bytedance/seed-oss-36b-instruct",
+    "owned_by": "bytedance",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 36
+  },
+  "databricks/dbrx-instruct": {
+    "id": "databricks/dbrx-instruct",
+    "owned_by": "databricks",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "deepseek-ai/deepseek-coder-6.7b-instruct": {
+    "id": "deepseek-ai/deepseek-coder-6.7b-instruct",
+    "owned_by": "deepseek-ai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 6.7,
+    "max_context": 16384,
+    "release_date": "2023-11",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 30
+  },
+  "deepseek-ai/deepseek-v4-flash": {
+    "id": "deepseek-ai/deepseek-v4-flash",
+    "owned_by": "deepseek-ai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 671,
+    "active_params": 37,
+    "max_context": 128000,
+    "release_date": "2025-05",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 12
+  },
+  "deepseek-ai/deepseek-v4-pro": {
+    "id": "deepseek-ai/deepseek-v4-pro",
+    "owned_by": "deepseek-ai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 671,
+    "active_params": 37,
+    "max_context": 128000,
+    "release_date": "2025-05",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 12
+  },
+  "google/codegemma-1.1-7b": {
+    "id": "google/codegemma-1.1-7b",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 7
+  },
+  "google/codegemma-7b": {
+    "id": "google/codegemma-7b",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 7,
+    "release_date": "2024-03",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 26
+  },
+  "google/deplot": {
+    "id": "google/deplot",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "release_date": "2023-04",
+    "hf_pipeline_tag": "visual-question-answering",
+    "hf_category": "vision_language",
+    "languages": [
+      "en",
+      "fr",
+      "ro",
+      "de"
+    ],
+    "age_months": 37
+  },
+  "google/gemma-2-2b-it": {
+    "id": "google/gemma-2-2b-it",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 2,
+    "max_context": 8192,
+    "release_date": "2024-06",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 23
+  },
+  "google/gemma-2b": {
+    "id": "google/gemma-2b",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 2,
+    "max_context": 8192,
+    "release_date": "2024-02",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 27
+  },
+  "google/gemma-3-12b-it": {
+    "id": "google/gemma-3-12b-it",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 12,
+    "max_context": 128000,
+    "release_date": "2025-03",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 14
+  },
+  "google/gemma-3-4b-it": {
+    "id": "google/gemma-3-4b-it",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 4,
+    "max_context": 128000,
+    "release_date": "2025-03",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 14
+  },
+  "google/gemma-3n-e2b-it": {
+    "id": "google/gemma-3n-e2b-it",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 2,
+    "release_date": "2025-06",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 11
+  },
+  "google/gemma-3n-e4b-it": {
+    "id": "google/gemma-3n-e4b-it",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 4,
+    "release_date": "2025-06",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 11
+  },
+  "google/gemma-4-31b-it": {
+    "id": "google/gemma-4-31b-it",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 31,
+    "max_context": 1000000,
+    "release_date": "2025-04",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 13
+  },
+  "google/recurrentgemma-2b": {
+    "id": "google/recurrentgemma-2b",
+    "owned_by": "google",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 2,
+    "max_context": 8192,
+    "release_date": "2024-02",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 27
+  },
+  "ibm/granite-3.0-3b-a800m-instruct": {
+    "id": "ibm/granite-3.0-3b-a800m-instruct",
+    "owned_by": "ibm",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 3,
+    "max_context": 4096,
+    "release_date": "2024-09",
+    "age_months": 20
+  },
+  "ibm/granite-3.0-8b-instruct": {
+    "id": "ibm/granite-3.0-8b-instruct",
+    "owned_by": "ibm",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "max_context": 4096,
+    "release_date": "2024-09",
+    "age_months": 20
+  },
+  "ibm/granite-34b-code-instruct": {
+    "id": "ibm/granite-34b-code-instruct",
+    "owned_by": "ibm",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 34,
+    "max_context": 8192,
+    "release_date": "2024-09",
+    "age_months": 20
+  },
+  "ibm/granite-8b-code-instruct": {
+    "id": "ibm/granite-8b-code-instruct",
+    "owned_by": "ibm",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8
+  },
+  "meta/codellama-70b": {
+    "id": "meta/codellama-70b",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70
+  },
+  "meta/llama-3.1-70b-instruct": {
+    "id": "meta/llama-3.1-70b-instruct",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70,
+    "max_context": 128000,
+    "release_date": "2024-07",
+    "age_months": 22
+  },
+  "meta/llama-3.1-8b-instruct": {
+    "id": "meta/llama-3.1-8b-instruct",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "max_context": 128000,
+    "release_date": "2024-07",
+    "age_months": 22
+  },
+  "meta/llama-3.2-11b-vision-instruct": {
+    "id": "meta/llama-3.2-11b-vision-instruct",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 11,
+    "max_context": 128000,
+    "release_date": "2024-09",
+    "age_months": 20
+  },
+  "meta/llama-3.2-1b-instruct": {
+    "id": "meta/llama-3.2-1b-instruct",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 1,
+    "max_context": 128000,
+    "release_date": "2024-09",
+    "age_months": 20
+  },
+  "meta/llama-3.2-3b-instruct": {
+    "id": "meta/llama-3.2-3b-instruct",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 3,
+    "max_context": 128000,
+    "release_date": "2024-09",
+    "age_months": 20
+  },
+  "meta/llama-3.2-90b-vision-instruct": {
+    "id": "meta/llama-3.2-90b-vision-instruct",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 90,
+    "max_context": 128000,
+    "release_date": "2024-09",
+    "age_months": 20
+  },
+  "meta/llama-3.3-70b-instruct": {
+    "id": "meta/llama-3.3-70b-instruct",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70,
+    "max_context": 128000,
+    "release_date": "2024-12",
+    "age_months": 17
+  },
+  "meta/llama-4-maverick-17b-128e-instruct": {
+    "id": "meta/llama-4-maverick-17b-128e-instruct",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 17,
+    "active_params": 17,
+    "max_context": 1000000,
+    "release_date": "2025-04",
+    "age_months": 13
+  },
+  "meta/llama-guard-4-12b": {
+    "id": "meta/llama-guard-4-12b",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 12
+  },
+  "meta/llama2-70b": {
+    "id": "meta/llama2-70b",
+    "owned_by": "meta",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70,
+    "max_context": 4096,
+    "release_date": "2023-07",
+    "age_months": 34
+  },
+  "microsoft/kosmos-2": {
+    "id": "microsoft/kosmos-2",
+    "owned_by": "microsoft",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 1.6,
+    "max_context": 4096,
+    "release_date": "2023-06",
+    "age_months": 35
+  },
+  "microsoft/phi-3-vision-128k-instruct": {
+    "id": "microsoft/phi-3-vision-128k-instruct",
+    "owned_by": "microsoft",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 4.2,
+    "max_context": 128000,
+    "release_date": "2024-05",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 24
+  },
+  "microsoft/phi-3.5-moe-instruct": {
+    "id": "microsoft/phi-3.5-moe-instruct",
+    "owned_by": "microsoft",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 42,
+    "active_params": 7,
+    "max_context": 128000,
+    "release_date": "2024-08",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 21
+  },
+  "microsoft/phi-4-mini-instruct": {
+    "id": "microsoft/phi-4-mini-instruct",
+    "owned_by": "microsoft",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 3.8,
+    "max_context": 128000,
+    "release_date": "2025-02",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "ar",
+      "zh",
+      "cs",
+      "da",
+      "nl"
+    ],
+    "age_months": 15
+  },
+  "microsoft/phi-4-multimodal-instruct": {
+    "id": "microsoft/phi-4-multimodal-instruct",
+    "owned_by": "microsoft",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 5.6,
+    "max_context": 128000,
+    "release_date": "2025-02",
+    "hf_pipeline_tag": "automatic-speech-recognition",
+    "hf_category": "audio",
+    "languages": [
+      "ar",
+      "zh",
+      "cs",
+      "da",
+      "nl"
+    ],
+    "age_months": 15
+  },
+  "minimaxai/minimax-m2.7": {
+    "id": "minimaxai/minimax-m2.7",
+    "owned_by": "minimaxai",
+    "updated_at": "2026-05-19T01:20:56",
+    "release_date": "2026-04",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 1
+  },
+  "mistralai/codestral-22b-instruct-v0.1": {
+    "id": "mistralai/codestral-22b-instruct-v0.1",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 22
+  },
+  "mistralai/ministral-14b-instruct-2512": {
+    "id": "mistralai/ministral-14b-instruct-2512",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 14
+  },
+  "mistralai/mistral-7b-instruct-v0.3": {
+    "id": "mistralai/mistral-7b-instruct-v0.3",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 7,
+    "max_context": 32768,
+    "release_date": "2023-09",
+    "age_months": 32
+  },
+  "mistralai/mistral-large": {
+    "id": "mistralai/mistral-large",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "mistralai/mistral-large-2-instruct": {
+    "id": "mistralai/mistral-large-2-instruct",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 123,
+    "max_context": 128000,
+    "release_date": "2024-07",
+    "age_months": 22
+  },
+  "mistralai/mistral-large-3-675b-instruct-2512": {
+    "id": "mistralai/mistral-large-3-675b-instruct-2512",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 675,
+    "max_context": 128000,
+    "release_date": "2025-05",
+    "languages": [
+      "en",
+      "fr",
+      "es",
+      "de",
+      "it"
+    ],
+    "age_months": 12
+  },
+  "mistralai/mistral-medium-3.5-128b": {
+    "id": "mistralai/mistral-medium-3.5-128b",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 128,
+    "max_context": 128000,
+    "release_date": "2025-04",
+    "languages": [
+      "en",
+      "fr",
+      "de",
+      "es",
+      "pt"
+    ],
+    "age_months": 13
+  },
+  "mistralai/mistral-nemotron": {
+    "id": "mistralai/mistral-nemotron",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "mistralai/mistral-small-4-119b-2603": {
+    "id": "mistralai/mistral-small-4-119b-2603",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 119,
+    "release_date": "2026-01",
+    "languages": [
+      "en",
+      "fr",
+      "de",
+      "es",
+      "pt"
+    ],
+    "age_months": 4
+  },
+  "mistralai/mixtral-8x22b-instruct-v0.1": {
+    "id": "mistralai/mixtral-8x22b-instruct-v0.1",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 176,
+    "active_params": 44,
+    "max_context": 65536,
+    "release_date": "2024-04",
+    "languages": [
+      "en",
+      "es",
+      "it",
+      "de",
+      "fr"
+    ],
+    "age_months": 25
+  },
+  "mistralai/mixtral-8x22b-v0.1": {
+    "id": "mistralai/mixtral-8x22b-v0.1",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 176,
+    "active_params": 44,
+    "max_context": 65536,
+    "release_date": "2024-04",
+    "languages": [
+      "fr",
+      "it",
+      "de",
+      "es",
+      "en"
+    ],
+    "age_months": 25
+  },
+  "mistralai/mixtral-8x7b-instruct-v0.1": {
+    "id": "mistralai/mixtral-8x7b-instruct-v0.1",
+    "owned_by": "mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 56,
+    "active_params": 14,
+    "max_context": 32768,
+    "release_date": "2023-12",
+    "languages": [
+      "fr",
+      "it",
+      "de",
+      "es",
+      "en"
+    ],
+    "age_months": 29
+  },
+  "moonshotai/kimi-k2.6": {
+    "id": "moonshotai/kimi-k2.6",
+    "owned_by": "moonshotai",
+    "updated_at": "2026-05-19T01:20:56",
+    "release_date": "2026-04",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 1
+  },
+  "nv-mistralai/mistral-nemo-12b-instruct": {
+    "id": "nv-mistralai/mistral-nemo-12b-instruct",
+    "owned_by": "nv-mistralai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 12
+  },
+  "nvidia/ai-synthetic-video-detector": {
+    "id": "nvidia/ai-synthetic-video-detector",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "nvidia/cosmos-reason2-8b": {
+    "id": "nvidia/cosmos-reason2-8b",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "release_date": "2025-12",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 5
+  },
+  "nvidia/embed-qa-4": {
+    "id": "nvidia/embed-qa-4",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "nvidia/gliner-pii": {
+    "id": "nvidia/gliner-pii",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "release_date": "2025-08",
+    "hf_pipeline_tag": "token-classification",
+    "hf_category": "general_chat",
+    "languages": [
+      "en"
+    ],
+    "age_months": 9
+  },
+  "nvidia/ising-calibration-1-35b-a3b": {
+    "id": "nvidia/ising-calibration-1-35b-a3b",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 35,
+    "active_params": 3,
+    "release_date": "2026-03",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 2
+  },
+  "nvidia/llama-3.1-nemoguard-8b-content-safety": {
+    "id": "nvidia/llama-3.1-nemoguard-8b-content-safety",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "release_date": "2025-01",
+    "hf_pipeline_tag": "text-classification",
+    "hf_category": "text_embedding",
+    "languages": [
+      "en"
+    ],
+    "age_months": 16
+  },
+  "nvidia/llama-3.1-nemoguard-8b-topic-control": {
+    "id": "nvidia/llama-3.1-nemoguard-8b-topic-control",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "release_date": "2025-01",
+    "hf_pipeline_tag": "text-classification",
+    "hf_category": "text_embedding",
+    "languages": [
+      "en"
+    ],
+    "age_months": 16
+  },
+  "nvidia/llama-3.1-nemotron-51b-instruct": {
+    "id": "nvidia/llama-3.1-nemotron-51b-instruct",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 51,
+    "max_context": 128000,
+    "release_date": "2024-10",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en"
+    ],
+    "age_months": 19
+  },
+  "nvidia/llama-3.1-nemotron-70b-instruct": {
+    "id": "nvidia/llama-3.1-nemotron-70b-instruct",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70,
+    "max_context": 128000,
+    "release_date": "2024-10",
+    "languages": [
+      "en"
+    ],
+    "age_months": 19
+  },
+  "nvidia/llama-3.1-nemotron-nano-8b-v1": {
+    "id": "nvidia/llama-3.1-nemotron-nano-8b-v1",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "max_context": 128000,
+    "release_date": "2025-01",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en"
+    ],
+    "age_months": 16
+  },
+  "nvidia/llama-3.1-nemotron-nano-vl-8b-v1": {
+    "id": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "release_date": "2025-06",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 11
+  },
+  "nvidia/llama-3.1-nemotron-safety-guard-8b-v3": {
+    "id": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "release_date": "2025-08",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en",
+      "ar",
+      "de",
+      "es",
+      "fr"
+    ],
+    "age_months": 9
+  },
+  "nvidia/llama-3.1-nemotron-ultra-253b-v1": {
+    "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 253,
+    "max_context": 128000,
+    "release_date": "2025-03",
+    "age_months": 14
+  },
+  "nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1": {
+    "id": "nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 1
+  },
+  "nvidia/llama-3.2-nv-embedqa-1b-v1": {
+    "id": "nvidia/llama-3.2-nv-embedqa-1b-v1",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 1,
+    "max_context": 8192,
+    "embed_dim": 2048,
+    "release_date": "2024-10",
+    "age_months": 19
+  },
+  "nvidia/llama-3.3-nemotron-super-49b-v1": {
+    "id": "nvidia/llama-3.3-nemotron-super-49b-v1",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 49,
+    "max_context": 128000,
+    "release_date": "2025-01",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en"
+    ],
+    "age_months": 16
+  },
+  "nvidia/llama-3.3-nemotron-super-49b-v1.5": {
+    "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 49,
+    "max_context": 128000,
+    "release_date": "2025-01",
+    "age_months": 16
+  },
+  "nvidia/llama-nemotron-embed-1b-v2": {
+    "id": "nvidia/llama-nemotron-embed-1b-v2",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 1,
+    "release_date": "2025-10",
+    "hf_pipeline_tag": "feature-extraction",
+    "hf_category": "text_embedding",
+    "age_months": 7
+  },
+  "nvidia/llama-nemotron-embed-vl-1b-v2": {
+    "id": "nvidia/llama-nemotron-embed-vl-1b-v2",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 1,
+    "release_date": "2025-12",
+    "hf_pipeline_tag": "sentence-similarity",
+    "hf_category": "text_embedding",
+    "age_months": 5
+  },
+  "nvidia/llama3-chatqa-1.5-70b": {
+    "id": "nvidia/llama3-chatqa-1.5-70b",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70,
+    "release_date": "2024-04",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en"
+    ],
+    "age_months": 25
+  },
+  "nvidia/mistral-nemo-minitron-8b-8k-instruct": {
+    "id": "nvidia/mistral-nemo-minitron-8b-8k-instruct",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 8,
+    "max_context": 8192
+  },
+  "nvidia/nemoretriever-parse": {
+    "id": "nvidia/nemoretriever-parse",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "nvidia/nemotron-3-content-safety": {
+    "id": "nvidia/nemotron-3-content-safety",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "release_date": "2026-03",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "languages": [
+      "en",
+      "ar",
+      "de",
+      "es",
+      "fr"
+    ],
+    "age_months": 2
+  },
+  "nvidia/nemotron-3-nano-30b-a3b": {
+    "id": "nvidia/nemotron-3-nano-30b-a3b",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 30,
+    "active_params": 3,
+    "max_context": 128000,
+    "release_date": "2025-04",
+    "age_months": 13
+  },
+  "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
+    "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 30,
+    "active_params": 3,
+    "release_date": "2026-04",
+    "hf_pipeline_tag": "any-to-any",
+    "age_months": 1
+  },
+  "nvidia/nemotron-3-super-120b-a12b": {
+    "id": "nvidia/nemotron-3-super-120b-a12b",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 120,
+    "active_params": 12
+  },
+  "nvidia/nemotron-4-340b-instruct": {
+    "id": "nvidia/nemotron-4-340b-instruct",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 340,
+    "max_context": 4096,
+    "release_date": "2024-06",
+    "age_months": 23
+  },
+  "nvidia/nemotron-4-340b-reward": {
+    "id": "nvidia/nemotron-4-340b-reward",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 340,
+    "max_context": 4096,
+    "release_date": "2024-06",
+    "languages": [
+      "en"
+    ],
+    "age_months": 23
+  },
+  "nvidia/nemotron-content-safety-reasoning-4b": {
+    "id": "nvidia/nemotron-content-safety-reasoning-4b",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 4,
+    "release_date": "2025-11",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en"
+    ],
+    "age_months": 6
+  },
+  "nvidia/nemotron-mini-4b-instruct": {
+    "id": "nvidia/nemotron-mini-4b-instruct",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 4,
+    "max_context": 4096,
+    "release_date": "2024-09",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en"
+    ],
+    "age_months": 20
+  },
+  "nvidia/nemotron-nano-12b-v2-vl": {
+    "id": "nvidia/nemotron-nano-12b-v2-vl",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 12,
+    "max_context": 32768,
+    "release_date": "2025-03",
+    "age_months": 14
+  },
+  "nvidia/nemotron-nano-3-30b-a3b": {
+    "id": "nvidia/nemotron-nano-3-30b-a3b",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 30,
+    "active_params": 3
+  },
+  "nvidia/nemotron-parse": {
+    "id": "nvidia/nemotron-parse",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "nvidia/neva-22b": {
+    "id": "nvidia/neva-22b",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 22,
+    "max_context": 4096,
+    "release_date": "2023-12",
+    "age_months": 29
+  },
+  "nvidia/nv-embed-v1": {
+    "id": "nvidia/nv-embed-v1",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 7.8,
+    "max_context": 32768,
+    "embed_dim": 4096,
+    "release_date": "2024-05",
+    "languages": [
+      "en"
+    ],
+    "age_months": 24
+  },
+  "nvidia/nv-embedcode-7b-v1": {
+    "id": "nvidia/nv-embedcode-7b-v1",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 7,
+    "release_date": "2025-07",
+    "hf_pipeline_tag": "sentence-similarity",
+    "hf_category": "text_embedding",
+    "age_months": 10
+  },
+  "nvidia/nv-embedqa-e5-v5": {
+    "id": "nvidia/nv-embedqa-e5-v5",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 0.7,
+    "max_context": 512,
+    "embed_dim": 1024,
+    "release_date": "2024-06",
+    "age_months": 23
+  },
+  "nvidia/nv-embedqa-mistral-7b-v2": {
+    "id": "nvidia/nv-embedqa-mistral-7b-v2",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 7,
+    "max_context": 32768,
+    "release_date": "2023-09",
+    "age_months": 32
+  },
+  "nvidia/nvclip": {
+    "id": "nvidia/nvclip",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "nvidia/nvidia-nemotron-nano-9b-v2": {
+    "id": "nvidia/nvidia-nemotron-nano-9b-v2",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 9,
+    "release_date": "2025-08",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en",
+      "es",
+      "fr",
+      "de",
+      "it"
+    ],
+    "age_months": 9
+  },
+  "nvidia/riva-translate-4b-instruct": {
+    "id": "nvidia/riva-translate-4b-instruct",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 4,
+    "release_date": "2025-06",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 11
+  },
+  "nvidia/riva-translate-4b-instruct-v1.1": {
+    "id": "nvidia/riva-translate-4b-instruct-v1.1",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 4,
+    "release_date": "2025-11",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 6
+  },
+  "nvidia/vila": {
+    "id": "nvidia/vila",
+    "owned_by": "nvidia",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "openai/gpt-oss-120b": {
+    "id": "openai/gpt-oss-120b",
+    "owned_by": "openai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 120,
+    "release_date": "2025-08",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 9
+  },
+  "openai/gpt-oss-20b": {
+    "id": "openai/gpt-oss-20b",
+    "owned_by": "openai",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 20,
+    "release_date": "2025-08",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 9
+  },
+  "qwen/qwen3-coder-480b-a35b-instruct": {
+    "id": "qwen/qwen3-coder-480b-a35b-instruct",
+    "owned_by": "qwen",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 480,
+    "active_params": 35,
+    "max_context": 32768,
+    "release_date": "2025-05",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 12
+  },
+  "qwen/qwen3-next-80b-a3b-instruct": {
+    "id": "qwen/qwen3-next-80b-a3b-instruct",
+    "owned_by": "qwen",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 80,
+    "active_params": 3,
+    "max_context": 128000,
+    "release_date": "2025-05",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 12
+  },
+  "qwen/qwen3-next-80b-a3b-thinking": {
+    "id": "qwen/qwen3-next-80b-a3b-thinking",
+    "owned_by": "qwen",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 80,
+    "active_params": 3,
+    "max_context": 128000,
+    "release_date": "2025-05",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 12
+  },
+  "qwen/qwen3.5-122b-a10b": {
+    "id": "qwen/qwen3.5-122b-a10b",
+    "owned_by": "qwen",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 122,
+    "active_params": 10,
+    "max_context": 128000,
+    "release_date": "2025-05",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 12
+  },
+  "qwen/qwen3.5-397b-a17b": {
+    "id": "qwen/qwen3.5-397b-a17b",
+    "owned_by": "qwen",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 397,
+    "active_params": 17,
+    "max_context": 128000,
+    "release_date": "2025-05",
+    "hf_pipeline_tag": "image-text-to-text",
+    "hf_category": "vision_language",
+    "age_months": 12
+  },
+  "sarvamai/sarvam-m": {
+    "id": "sarvamai/sarvam-m",
+    "owned_by": "sarvamai",
+    "updated_at": "2026-05-19T01:20:56",
+    "release_date": "2025-05",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en",
+      "bn",
+      "hi",
+      "kn",
+      "gu"
+    ],
+    "age_months": 12
+  },
+  "snowflake/arctic-embed-l": {
+    "id": "snowflake/arctic-embed-l",
+    "owned_by": "snowflake",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 0.33,
+    "max_context": 512,
+    "embed_dim": 1024,
+    "release_date": "2024-04",
+    "hf_pipeline_tag": "sentence-similarity",
+    "hf_category": "text_embedding",
+    "age_months": 25
+  },
+  "stepfun-ai/step-3.5-flash": {
+    "id": "stepfun-ai/step-3.5-flash",
+    "owned_by": "stepfun-ai",
+    "updated_at": "2026-05-19T01:20:56",
+    "release_date": "2026-02",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 3
+  },
+  "stockmark/stockmark-2-100b-instruct": {
+    "id": "stockmark/stockmark-2-100b-instruct",
+    "owned_by": "stockmark",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 100,
+    "release_date": "2025-07",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "ja",
+      "en"
+    ],
+    "age_months": 10
+  },
+  "upstage/solar-10.7b-instruct": {
+    "id": "upstage/solar-10.7b-instruct",
+    "owned_by": "upstage",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 10.7
+  },
+  "writer/palmyra-creative-122b": {
+    "id": "writer/palmyra-creative-122b",
+    "owned_by": "writer",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 122
+  },
+  "writer/palmyra-fin-70b-32k": {
+    "id": "writer/palmyra-fin-70b-32k",
+    "owned_by": "writer",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70,
+    "max_context": 32768,
+    "release_date": "2024-07",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 22
+  },
+  "writer/palmyra-med-70b": {
+    "id": "writer/palmyra-med-70b",
+    "owned_by": "writer",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70,
+    "release_date": "2024-05",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en"
+    ],
+    "age_months": 24
+  },
+  "writer/palmyra-med-70b-32k": {
+    "id": "writer/palmyra-med-70b-32k",
+    "owned_by": "writer",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 70,
+    "max_context": 32768,
+    "release_date": "2024-06",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "languages": [
+      "en"
+    ],
+    "age_months": 23
+  },
+  "z-ai/glm-5.1": {
+    "id": "z-ai/glm-5.1",
+    "owned_by": "z-ai",
+    "updated_at": "2026-05-19T01:20:56"
+  },
+  "zyphra/zamba2-7b-instruct": {
+    "id": "zyphra/zamba2-7b-instruct",
+    "owned_by": "zyphra",
+    "updated_at": "2026-05-19T01:20:56",
+    "param_count": 7,
+    "release_date": "2024-10",
+    "hf_pipeline_tag": "text-generation",
+    "hf_category": "general_chat",
+    "age_months": 19
+  },
+  "stepfun-ai/step-3.7-flash": {
+    "id": "stepfun-ai/step-3.7-flash",
+    "updated_at": "2026-06-03T01:16:50",
+    "hf_pipeline_tag": "image-text-to-text",
+    "release_date": "2026-05",
+    "languages": [
+      "en"
+    ]
+  },
+  "nvidia/nemotron-3-ultra-550b-a55b": {
+    "id": "nvidia/nemotron-3-ultra-550b-a55b",
+    "updated_at": "2026-06-11T01:31:33",
+    "param_count": 550,
+    "active_params": 55
+  },
+  "nvidia/nemotron-3.5-content-safety": {
+    "id": "nvidia/nemotron-3.5-content-safety",
+    "updated_at": "2026-06-11T01:31:33",
+    "release_date": "2026-05",
+    "languages": [
+      "en",
+      "ar",
+      "de",
+      "es",
+      "fr"
+    ]
+  },
+  "google/diffusiongemma-26b-a4b-it": {
+    "id": "google/diffusiongemma-26b-a4b-it",
+    "updated_at": "2026-06-11T11:45:06",
+    "param_count": 26,
+    "active_params": 4,
+    "hf_pipeline_tag": "image-text-to-text",
+    "release_date": "2026-06"
+  }
+}

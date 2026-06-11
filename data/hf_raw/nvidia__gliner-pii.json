@@ -1,0 +1,126 @@
+{
+  "_id": "68b1e81d0d91ac3cd314345d",
+  "id": "nvidia/gliner-PII",
+  "private": false,
+  "pipeline_tag": "token-classification",
+  "library_name": "gliner",
+  "tags": [
+    "gliner",
+    "pytorch",
+    "nvidia",
+    "PII",
+    "PHI",
+    "GLiNER",
+    "information extraction",
+    "entity recognition",
+    "privacy",
+    "token-classification",
+    "en",
+    "license:other",
+    "region:us"
+  ],
+  "downloads": 10671,
+  "likes": 125,
+  "modelId": "nvidia/gliner-PII",
+  "author": "nvidia",
+  "sha": "bd23e8ef4425fd04e34c5204ab49ffaa706eae79",
+  "lastModified": "2025-12-07T21:51:24.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "My name is Wolfgang and I live in Berlin"
+    },
+    {
+      "text": "My name is Sarah and I live in London"
+    },
+    {
+      "text": "My name is Clara and I live in Berkeley, California."
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "tokenizer_config": {
+      "bos_token": "[CLS]",
+      "cls_token": "[CLS]",
+      "eos_token": "[SEP]",
+      "mask_token": "[MASK]",
+      "pad_token": "[PAD]",
+      "sep_token": "[SEP]",
+      "unk_token": "[UNK]"
+    }
+  },
+  "cardData": {
+    "library_name": "gliner",
+    "license": "other",
+    "license_name": "nvidia-open-model-license",
+    "license_link": "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/",
+    "pipeline_tag": "token-classification",
+    "language": [
+      "en"
+    ],
+    "tags": [
+      "nvidia",
+      "pytorch",
+      "PII",
+      "PHI",
+      "GLiNER",
+      "information extraction",
+      "entity recognition",
+      "privacy"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "BIAS.md"
+    },
+    {
+      "rfilename": "EXPLAINABILITY.md"
+    },
+    {
+      "rfilename": "PRIVACY.md"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "SAFETY&SECURITY.md"
+    },
+    {
+      "rfilename": "added_tokens.json"
+    },
+    {
+      "rfilename": "gliner_config.json"
+    },
+    {
+      "rfilename": "pytorch_model.bin"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "spm.model"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "sitammeur/GLiNER-PII",
+    "narasimha-m/pii-guardian",
+    "BaoLocTown/gliner-vn",
+    "to-be/redact",
+    "marvin-cusm-chatbot/champ-chatbot",
+    "qyle/champ-chatbot",
+    "ahmedfarazsyk/redacto-api",
+    "SHAFISK17/sense-backend"
+  ],
+  "createdAt": "2025-08-29T17:49:17.000Z",
+  "usedStorage": 3566379203
+}

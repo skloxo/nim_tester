@@ -1,0 +1,167 @@
+{
+  "_id": "652f0dc05d91b1c2957de551",
+  "id": "adept/fuyu-8b",
+  "private": false,
+  "pipeline_tag": "image-text-to-text",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "fuyu",
+    "image-text-to-text",
+    "license:cc-by-nc-4.0",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 104180,
+  "likes": 1018,
+  "modelId": "adept/fuyu-8b",
+  "author": "adept",
+  "sha": "f41defefdb89be0d28cac19d94ce216e37cb6be5",
+  "lastModified": "2023-11-04T11:13:11.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "FuyuForCausalLM"
+    ],
+    "model_type": "fuyu",
+    "tokenizer_config": {
+      "bos_token": "|ENDOFTEXT|",
+      "eos_token": "|ENDOFTEXT|",
+      "pad_token": null,
+      "unk_token": "<unk>",
+      "use_default_system_prompt": true
+    }
+  },
+  "cardData": {
+    "license": "cc-by-nc-4.0"
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForImageTextToText",
+    "pipeline_tag": "image-text-to-text",
+    "processor": "AutoProcessor"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "added_tokens.json"
+    },
+    {
+      "rfilename": "architecture.png"
+    },
+    {
+      "rfilename": "bus.png"
+    },
+    {
+      "rfilename": "chart.png"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "model-00001-of-00002.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00002.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    },
+    {
+      "rfilename": "skateboard.png"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer.model"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "adept/fuyu-8b-demo",
+    "aimevzulari/Prompt_Uzmani",
+    "TeamTonic/MultiMed",
+    "rahul7star/ai-toolkit",
+    "eduagarcia/multilingual-tokenizer-leaderboard",
+    "Tonic/MultiMedTulu",
+    "amankishore/adept-fuyu-8b",
+    "ACA050/ALM-2",
+    "YongHuang/PatientEducation",
+    "ttul/adept-fuyu-8b",
+    "namanambavi/adept-fuyu-8b",
+    "egang/adept-fuyu-8b",
+    "bingbort/OtterHD-Demo",
+    "yzlee/adept-fuyu-8b",
+    "AhmedMagdy7/adept-fuyu-8b",
+    "divyareddy/imagebot",
+    "armahin/adept-fuyu-8b",
+    "sgondala/adept-fuyu-8b",
+    "Sivesh123/adept-fuyu-8b",
+    "dhanilka/CaptionGenerator",
+    "BobbyThrillz/adept-fuyu-8b",
+    "algojoe/adept-fuyu-8b",
+    "poorfish/fish-fuyu-8b",
+    "cheerfuldustin/adept-fuyu-8b",
+    "anthonydheysumcarecentra/adept-fuyu-8b",
+    "AnandMaran/fuyumodel",
+    "ruthviking17/adept-fuyu-8b",
+    "sander31/adept-fuyu-8b",
+    "blahmad/adept-fuyu-8b",
+    "1littlecoder/fuyu-8b-demo",
+    "chalken/Test1",
+    "LAYEK-143/adept-fuyu-8b",
+    "medgag/fuyu-8b-demo",
+    "netpoe/adept-fuyu-8b",
+    "Uiuioi/adept-fuyu-8b",
+    "akaifun/adept-fuyu-8b",
+    "Gigalomanicx/adept-fuyu-8b",
+    "csa1980/adept-fuyu-8b",
+    "jerometan/adept-fuyu-8b",
+    "UTOPIA-DXD/fuyu-8b-demo",
+    "AiYeetUS/adept-fuyu-8b",
+    "destiny966113/adept-fuyu-8b",
+    "Phea5antP1ucker/adept-fuyu-8b",
+    "amanpoddar4/adept-fuyu-8b",
+    "zachrussell/adept-fuyu-8b",
+    "Rrgb/adept-fuyu-8b",
+    "TrickyMan/adept-fuyu-8b",
+    "Trysv/adept-fuyu-8b",
+    "nombx/adept-fuyu-8b",
+    "therayz1/Prompt_Engineer",
+    "kayrahan/promtmuhendisi",
+    "ramimu/LoRa_Streamlit",
+    "ArchaveCommunity/AiTest",
+    "rahul7star/ohamlab-ai-toolkit",
+    "jbilcke-hf/ai-toolkit",
+    "sub314xxl/ai-toolkit",
+    "Useruser2statsaltalt/ai-toolkit",
+    "reimash/ai-toolkit"
+  ],
+  "createdAt": "2023-10-17T22:42:08.000Z",
+  "safetensors": {
+    "parameters": {
+      "BF16": 9408238592
+    },
+    "total": 9408238592
+  },
+  "usedStorage": 37678352448
+}

@@ -1,0 +1,21 @@
+{
+  "name": "nim_tester",
+  "module": "src/main.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run src/main.ts",
+    "server": "bun run src/server.ts",
+    "dev": "bun --watch src/server.ts",
+    "compile-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "hono": "^4.1.0",
+    "yaml": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "_id": "687051fab1fa4d815f15e786",
+  "id": "nvidia/NV-EmbedCode-7b-v1",
+  "private": false,
+  "pipeline_tag": "sentence-similarity",
+  "library_name": "sentence-transformers",
+  "tags": [
+    "sentence-transformers",
+    "safetensors",
+    "mistralbidirectional",
+    "swe-bench",
+    "code-similarity",
+    "code-retrieval",
+    "code-search",
+    "code-explanation",
+    "sentence-similarity",
+    "custom_code",
+    "license:other",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 136,
+  "likes": 23,
+  "modelId": "nvidia/NV-EmbedCode-7b-v1",
+  "author": "nvidia",
+  "sha": "d3d0fccf8e7a1ef41ff7c7a2e4c05631860267e0",
+  "lastModified": "2025-08-28T22:17:41.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "MistralBiDirectionalModel"
+    ],
+    "auto_map": {
+      "AutoConfig": "bidirectional_models.MistralBiDirectionalConfig",
+      "AutoModel": "bidirectional_models.MistralBiDirectionalModel"
+    },
+    "model_type": "mistralbidirectional",
+    "tokenizer_config": {
+      "bos_token": "<s>",
+      "eos_token": "</s>",
+      "pad_token": "</s>",
+      "unk_token": "<unk>",
+      "use_default_system_prompt": false
+    }
+  },
+  "cardData": {
+    "library_name": "sentence-transformers",
+    "pipeline_tag": "sentence-similarity",
+    "tags": [
+      "swe-bench",
+      "code-similarity",
+      "code-retrieval",
+      "code-search",
+      "code-explanation",
+      "sentence-transformers",
+      "sentence-similarity"
+    ],
+    "widget": [],
+    "paper": "https://openreview.net/forum?id=k6p8UKRdH7",
+    "license": "other",
+    "license_name": "nvidia-ai-foundation-models-community-license-agreement",
+    "license_link": "https://developer.nvidia.com/downloads/ai-foundation-models-license"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "1_Pooling/config.json"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "bidirectional_models.py"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "config_sentence_transformers.json"
+    },
+    {
+      "rfilename": "model-00001-of-00006.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00006.safetensors"
+    },
+    {
+      "rfilename": "model-00003-of-00006.safetensors"
+    },
+    {
+      "rfilename": "model-00004-of-00006.safetensors"
+    },
+    {
+      "rfilename": "model-00005-of-00006.safetensors"
+    },
+    {
+      "rfilename": "model-00006-of-00006.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "modules.json"
+    },
+    {
+      "rfilename": "sentence_bert_config.json"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer.model"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-07-10T23:51:22.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 7110660096
+    },
+    "total": 7110660096
+  },
+  "usedStorage": 28443165627
+}

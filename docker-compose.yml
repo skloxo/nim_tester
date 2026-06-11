@@ -1,0 +1,13 @@
+services:
+  api-tester:
+    build: .
+    container_name: api-tester-server
+    ports:
+      - "28080:28080"
+    volumes:
+      # 挂载配置与数据文件，确保在容器重启或销毁后数据能持久化留在宿主机
+      - ./config.yaml:/app/config.yaml
+      - ./profiles.json:/app/profiles.json
+      - ./history.db:/app/history.db
+      - ./results:/app/results
+    restart: always

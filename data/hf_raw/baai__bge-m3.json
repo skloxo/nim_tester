@@ -1,0 +1,274 @@
+{
+  "_id": "65b53851e602b6c2c96e78da",
+  "id": "BAAI/bge-m3",
+  "private": false,
+  "pipeline_tag": "sentence-similarity",
+  "library_name": "sentence-transformers",
+  "tags": [
+    "sentence-transformers",
+    "pytorch",
+    "onnx",
+    "xlm-roberta",
+    "feature-extraction",
+    "sentence-similarity",
+    "arxiv:2402.03216",
+    "arxiv:2004.04906",
+    "arxiv:2106.14807",
+    "arxiv:2107.05720",
+    "arxiv:2004.12832",
+    "license:mit",
+    "eval-results",
+    "text-embeddings-inference",
+    "endpoints_compatible",
+    "deploy:azure",
+    "region:us"
+  ],
+  "downloads": 26601814,
+  "likes": 3011,
+  "modelId": "BAAI/bge-m3",
+  "author": "BAAI",
+  "sha": "5617a9f61b028005a4858fdac845db406aefb181",
+  "lastModified": "2024-07-03T14:50:10.000Z",
+  "gated": false,
+  "disabled": false,
+  "mask_token": "<mask>",
+  "widgetData": [
+    {
+      "source_sentence": "That is a happy person",
+      "sentences": [
+        "That is a happy dog",
+        "That is a very happy person",
+        "Today is a sunny day"
+      ]
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "XLMRobertaModel"
+    ],
+    "model_type": "xlm-roberta",
+    "tokenizer_config": {
+      "bos_token": "<s>",
+      "cls_token": "<s>",
+      "eos_token": "</s>",
+      "mask_token": {
+        "__type": "AddedToken",
+        "content": "<mask>",
+        "lstrip": true,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": false
+      },
+      "pad_token": "<pad>",
+      "sep_token": "</s>",
+      "unk_token": "<unk>"
+    }
+  },
+  "cardData": {
+    "pipeline_tag": "sentence-similarity",
+    "tags": [
+      "sentence-transformers",
+      "feature-extraction",
+      "sentence-similarity"
+    ],
+    "license": "mit"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "1_Pooling/config.json"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "colbert_linear.pt"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "config_sentence_transformers.json"
+    },
+    {
+      "rfilename": "imgs/.DS_Store"
+    },
+    {
+      "rfilename": "imgs/bm25.jpg"
+    },
+    {
+      "rfilename": "imgs/long.jpg"
+    },
+    {
+      "rfilename": "imgs/miracl.jpg"
+    },
+    {
+      "rfilename": "imgs/mkqa.jpg"
+    },
+    {
+      "rfilename": "imgs/nqa.jpg"
+    },
+    {
+      "rfilename": "imgs/others.webp"
+    },
+    {
+      "rfilename": "long.jpg"
+    },
+    {
+      "rfilename": "modules.json"
+    },
+    {
+      "rfilename": "onnx/Constant_7_attr__value"
+    },
+    {
+      "rfilename": "onnx/config.json"
+    },
+    {
+      "rfilename": "onnx/model.onnx"
+    },
+    {
+      "rfilename": "onnx/model.onnx_data"
+    },
+    {
+      "rfilename": "onnx/sentencepiece.bpe.model"
+    },
+    {
+      "rfilename": "onnx/special_tokens_map.json"
+    },
+    {
+      "rfilename": "onnx/tokenizer.json"
+    },
+    {
+      "rfilename": "onnx/tokenizer_config.json"
+    },
+    {
+      "rfilename": "pytorch_model.bin"
+    },
+    {
+      "rfilename": "sentence_bert_config.json"
+    },
+    {
+      "rfilename": "sentencepiece.bpe.model"
+    },
+    {
+      "rfilename": "sparse_linear.pt"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "mteb/leaderboard",
+    "Peterase/rag-api-node-1",
+    "Kavy1445/gita-guidance-api",
+    "Abdelrahman023/edu-egypt",
+    "hasancanbiyik/immigration-assistant",
+    "SAkizuki/DanbooruSearch",
+    "mteb/leaderboard_legacy",
+    "panuthept/thai_sentence_embedding_benchmark",
+    "antoinelouis/mtem-pruner",
+    "GIZ/audit_assistant",
+    "alienet/BookWorld",
+    "lightmate/llm-chatbot",
+    "SAkizuki/WenQiuYue",
+    "Clarymind/BAAI-bge-m3",
+    "SmileXing/leaderboard",
+    "jglowa/bielik-czat",
+    "TheJimmy/ai-builder-bookIdentifier-HF",
+    "NaikPriyank/ConvoTrack",
+    "denniscraandijk/mtem-pruner",
+    "aihuashanying/aileeao",
+    "ZalzalaKhan/disaster-rag",
+    "eduagarcia/multilingual-tokenizer-leaderboard",
+    "anpigon/law-bot",
+    "XiaoxiongLee/D2Cell-chatbot",
+    "evgensoft/baai-m3",
+    "Someshfengde/Visualized_BGE_demo",
+    "Shriharshan/Autism-RAG",
+    "Agents-MCP-Hackathon/DocuCite-Agent",
+    "ipepe/nomic-embeddings",
+    "ChatVLD/CHATVLD",
+    "akra35567/akira",
+    "XiaoxiongLee/D2Cell_chatbot",
+    "Luigi/tiny-scribe",
+    "ahmedsaeed2515/AgriRAG-API",
+    "amryassin/embedding-bench",
+    "TheDrakosfire/RuleLawyer",
+    "SujonPro24/sentence_similairty",
+    "anpigon/langchain-qa-bot",
+    "rishisim/aiotsmartlabs-assistant",
+    "universalsoftware/uchat",
+    "LISA-Kadi/LISA-demo",
+    "AminFaraji/SecondSpace",
+    "Yadanar1010/athena-ai-programming-mentor",
+    "opex792/MoviesSemanticSearch",
+    "opex792/MoviesSemanticSearchBgeM3",
+    "opex792/MoviesSemanticSearchTesting",
+    "opex792/MoviesSemanticSearchTesting2",
+    "xeoyeon/WhyFi",
+    "ItzRoBeerT/WAIter",
+    "AidenMcC/rf-drill-labeler",
+    "kxm1k4m1/bge-m3",
+    "vinimoreira/RAG_backend",
+    "al1kss/safetyAI",
+    "LKTs/CafeAgentX",
+    "NLG01/chatbot_aivancity",
+    "lolo1809/ChatBot",
+    "drwlf/medical-pdf-ingestion",
+    "hieuailearning/BAAI_bge_m3_api",
+    "Oussama-TH/Ai_mate",
+    "chouchouvs/DeepIndex",
+    "GIZ/ChaBo_README",
+    "danishmustafa86/healthtech",
+    "akryldigital/audit_assistant",
+    "akage99/article-model-digifeed",
+    "LibrAI/uae-kb",
+    "realdexter/RepoReaper",
+    "akage99/article-classifier-vectordb",
+    "necajesus/lexclara-chatbot",
+    "Abdulrhmanalatab/text_summrization",
+    "paradism/kigam-regulation",
+    "AmbitiousPotato/SingaporeAiBackend",
+    "AshJem/Nolej",
+    "Om-2003/steam-game-search-ui",
+    "Vanshcc/RamayanaOg",
+    "masterzhan/zhehelima",
+    "crgmail/bge",
+    "omark3405/boss-restaurant-chat",
+    "GabeA/chatbench-leaderboard",
+    "Ashanasri/construction-rag",
+    "ahmedsaeed111/AgriRAG_Pro",
+    "vcasas/sistema-experto-codigo-penal",
+    "doniyor117/yurika-backend",
+    "Hygroskopisch/ifc-kbob-ai-matcher",
+    "bqtankiet/travel-chatbot",
+    "saadimam/Basketball-RAG",
+    "wathoresanket/multimodal-semantic-pricing",
+    "amrit55555/neural-rag-explorer",
+    "Manar13/Yusr-Hajj-API",
+    "profsuccofrutta/ai-act-advisor",
+    "driodnexus/droidnexus-labs-hub",
+    "MuhammadHamza33/RAG-e-Qanoon",
+    "Askaarr/Yangtez-beta",
+    "Chris4K/Layers",
+    "StephenZao/biblesphere",
+    "sanjiv2311/kaisanlegal",
+    "rajann/legalAI",
+    "Mazenbs/emmdtageed",
+    "Hygros-LCA/ifc-kbob-ai-matcher",
+    "maxpar1/leaderboard",
+    "mastershlfu/embeddingvector"
+  ],
+  "createdAt": "2024-01-27T17:07:29.000Z",
+  "inference": "warm",
+  "usedStorage": 13704659878
+}

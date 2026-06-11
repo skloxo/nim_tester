@@ -1,0 +1,173 @@
+{
+  "_id": "682c23893c5e5e8582f6098c",
+  "id": "sarvamai/sarvam-m",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "mistral",
+    "text-generation",
+    "conversational",
+    "en",
+    "bn",
+    "hi",
+    "kn",
+    "gu",
+    "mr",
+    "ml",
+    "or",
+    "pa",
+    "ta",
+    "te",
+    "base_model:mistralai/Mistral-Small-3.1-24B-Base-2503",
+    "base_model:finetune:mistralai/Mistral-Small-3.1-24B-Base-2503",
+    "license:apache-2.0",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 2412,
+  "likes": 342,
+  "modelId": "sarvamai/sarvam-m",
+  "author": "sarvamai",
+  "sha": "01534a53c46f2788e392dbb3d994e0fa8f04d3fd",
+  "lastModified": "2025-05-28T08:11:24.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "Hi, what can you help me with?"
+    },
+    {
+      "text": "What is 84 * 3 / 2?"
+    },
+    {
+      "text": "Tell me an interesting fact about the universe!"
+    },
+    {
+      "text": "Explain quantum computing in simple terms."
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "MistralForCausalLM"
+    ],
+    "model_type": "mistral",
+    "tokenizer_config": {
+      "bos_token": "<s>",
+      "chat_template": "{%- set today = strftime_now(\"%Y-%m-%d\") %}\n{%- set default_think_system_message = \"You are a helpful assistant. Think deeply before answering the user's question. Do the thinking inside <think>...</think> tags.\" %}\n{%- set default_nothink_system_message = \"You are a helpful assistant.\" %}\n{%- set think_system_message_addition = \"Think deeply before answering the user's question. Do the thinking inside <think>...</think> tags.\" %}\n\n{{- bos_token }}\n\n{%- if messages[0].role == 'system' %}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {%- set system_message = messages[0].content %}\n    {%- else %}\n        {%- set system_message = think_system_message_addition +'\\n\\n'+ messages[0].content %}\n    {%- endif %}\n    {%- set loop_messages = messages[1:] %}\n{%- else %}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {%- set system_message = default_nothink_system_message %}\n    {%- else %}\n        {%- set system_message = default_think_system_message %}\n    {%- endif %}\n    {%- set loop_messages = messages %}\n{%- endif %}\n\n{{- '[SYSTEM_PROMPT]' + system_message + '[/SYSTEM_PROMPT]' }}\n\n{%- for message in loop_messages %}\n    {%- if message.role == 'user' %}\n        {%- if loop.index0 % 2 == 1 %}\n            {{- raise_exception('User and assistant turns must alternate starting with user turn!') }}\n        {%- endif %}\n        {%- if loop.last and not (enable_thinking is defined and enable_thinking is false) %}\n            {{- '[INST]' + message.content + '[/INST]<think>\\n' }}\n        {%- else %}\n            {{- '[INST]' + message.content + '[/INST]' }}\n        {%- endif %}\n    {%- elif message.role == 'system' %}\n        {{- raise_exception('System message can only be the first message!') }}\n    {%- elif message.role == 'assistant' %}\n        {%- if loop.index0 % 2 == 0 %}\n            {{- raise_exception('User and assistant turns must alternate starting with user turn!') }}\n        {%- endif %}\n        {%- set content = message.content %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is defined and message.reasoning_content is not none %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in message.content %}\n                {%- set content = message.content.split('</think>')[-1].lstrip('\\n') %}\n                {%- set reasoning_content = message.content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.last and reasoning_content and not (enable_thinking is defined and enable_thinking is false) %}\n            {{- '<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') + eos_token }}\n        {%- else %}\n            {{- content + eos_token }}\n        {%- endif %}\n    {%- else %}\n        {{- raise_exception('Only user, system and assistant roles are supported!') }}\n    {%- endif %}\n{%- endfor %}",
+      "eos_token": "</s>",
+      "unk_token": "<unk>",
+      "use_default_system_prompt": false
+    }
+  },
+  "cardData": {
+    "library_name": "transformers",
+    "license": "apache-2.0",
+    "language": [
+      "en",
+      "bn",
+      "hi",
+      "kn",
+      "gu",
+      "mr",
+      "ml",
+      "or",
+      "pa",
+      "ta",
+      "te"
+    ],
+    "base_model": [
+      "mistralai/Mistral-Small-3.1-24B-Base-2503"
+    ],
+    "base_model_relation": "finetune"
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "LICENSE.txt"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "model-00001-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model-00003-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model-00004-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model-00005-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model-00006-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model-00007-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model-00008-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model-00009-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model-00010-of-00010.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "dvpearl/REFRAME",
+    "AdamyaG/Sarvam_m_indian_chat",
+    "Mohit21j/Mohitchatbot",
+    "ReallyFloppyPenguin/AICodepen",
+    "EviLTwin1000/sarvamai-sarvam-m",
+    "ikaruart/sarvam_malayalam",
+    "Thatneos/sarvamai-sarvam",
+    "krrishk22/Demo_chat_bot",
+    "AdityaBatchu/MyGenAiChatBot",
+    "Synnove/Final_Assignment_Template",
+    "krrishkh12/Demo-Chat-Bot",
+    "kunalMahajan/VenomBot",
+    "gowrishiam/BANG",
+    "kalyanbrat/test_chat",
+    "vigneshmahareddy/sarvam-assistant",
+    "Banu007/sarvamai-sarvam-m"
+  ],
+  "createdAt": "2025-05-20T06:39:05.000Z",
+  "inference": "warm",
+  "usedStorage": 119370227634
+}

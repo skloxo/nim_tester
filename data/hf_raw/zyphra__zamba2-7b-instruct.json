@@ -1,0 +1,131 @@
+{
+  "_id": "670774a8155f0f9ebb303500",
+  "id": "Zyphra/Zamba2-7B-Instruct",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "zamba2",
+    "text-generation",
+    "conversational",
+    "base_model:Zyphra/Zamba2-7B",
+    "base_model:finetune:Zyphra/Zamba2-7B",
+    "license:apache-2.0",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 62876,
+  "likes": 92,
+  "modelId": "Zyphra/Zamba2-7B-Instruct",
+  "author": "Zyphra",
+  "sha": "3146688c5286a3d1ac54ac287bc276b6803e193e",
+  "lastModified": "2025-05-16T01:50:30.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "Hi, what can you help me with?"
+    },
+    {
+      "text": "What is 84 * 3 / 2?"
+    },
+    {
+      "text": "Tell me an interesting fact about the universe!"
+    },
+    {
+      "text": "Explain quantum computing in simple terms."
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "Zamba2ForCausalLM"
+    ],
+    "model_type": "zamba2",
+    "tokenizer_config": {
+      "bos_token": "<|im_start|>",
+      "chat_template": "{% for message in messages %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+      "eos_token": "<|im_end|>",
+      "pad_token": "[PAD]",
+      "unk_token": null,
+      "use_default_system_prompt": false
+    }
+  },
+  "cardData": {
+    "license": "apache-2.0",
+    "base_model": [
+      "Zyphra/Zamba2-7B"
+    ],
+    "library_name": "transformers"
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "model-00001-of-00003.safetensors"
+    },
+    {
+      "rfilename": "model-00001-of-00004.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00003.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00004.safetensors"
+    },
+    {
+      "rfilename": "model-00003-of-00003.safetensors"
+    },
+    {
+      "rfilename": "model-00003-of-00004.safetensors"
+    },
+    {
+      "rfilename": "model-00004-of-00004.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "eduagarcia/multilingual-tokenizer-leaderboard",
+    "hysts/Zamba2-7B-instruct",
+    "alexjplant/Zyphra-Zamba2-7B-Instruct",
+    "Taf2023/Zamba2-7B",
+    "Taf2023/Zyphra-Zamba2-7B-Instruct",
+    "Dannyboy26/Zyphra-Zamba2-7B-Instruct"
+  ],
+  "createdAt": "2024-10-10T06:31:04.000Z",
+  "safetensors": {
+    "parameters": {
+      "BF16": 7356749648
+    },
+    "total": 7356749648
+  },
+  "usedStorage": 49502374616
+}

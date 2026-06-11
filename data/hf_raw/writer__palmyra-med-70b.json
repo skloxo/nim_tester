@@ -1,0 +1,288 @@
+{
+  "_id": "663819e5ccadfaaeac3be211",
+  "id": "Writer/Palmyra-Med-70B",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "llama",
+    "text-generation",
+    "instruct",
+    "finetune",
+    "DPO",
+    "distillation",
+    "heathcare",
+    "medical",
+    "clinical",
+    "med",
+    "lifescience",
+    "Pharmaceutical",
+    "Pharma",
+    "Enterprise LLM",
+    "Enterprise",
+    "Enterprise ready",
+    "conversational",
+    "en",
+    "arxiv:2305.18290",
+    "license:other",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 6,
+  "likes": 87,
+  "modelId": "Writer/Palmyra-Med-70B",
+  "author": "Writer",
+  "sha": "786a293786729bcaa2aa3c693747400fa957b523",
+  "lastModified": "2024-10-01T21:18:06.000Z",
+  "gated": "auto",
+  "disabled": false,
+  "widgetData": [
+    {
+      "example_title": "Palmyra-Med-70B",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a highly knowledgeable and experienced expert in the healthcare and biomedical field, possessing extensive medical knowledge and practical expertise."
+        },
+        {
+          "role": "user",
+          "content": "Does danzhi Xiaoyao San ameliorate depressive-like behavior by shifting toward serotonin via the downregulation of hippocampal indoleamine 2,3-dioxygenase?"
+        }
+      ],
+      "output": {
+        "text": "Danzhi Xiaoyao San (DXS) exhibited significant antidepressant-like effects in rats subjected to chronic unpredictable mild stress (CUMS), a commonly used model for inducing depressive-like behavior. The administration of DXS led to a notable reduction in the activity of indoleamine 2,3-dioxygenase (IDO) in the hippocampus. This reduction in IDO activity is crucial because IDO is an enzyme that catalyzes the degradation of tryptophan into kynurenine (Kyn), thereby diverting tryptophan away from the serotonin (5-HT) synthesis pathway. By downregulating IDO, DXS effectively shifts the balance of tryptophan metabolism towards increased serotonin production, thereby enhancing the availability of serotonin. This shift in the Kyn/5-HT pathway favoring serotonin is likely a key mechanism underlying the antidepressant effects observed with DXS treatment. Enhanced serotonin levels in the hippocampus are associated with improved mood and reduction of depressive symptoms, suggesting that DXS could be a promising therapeutic agent for managing depression."
+      }
+    }
+  ],
+  "model-index": [
+    {
+      "name": "Palmyra-Med-70B",
+      "results": []
+    }
+  ],
+  "config": {
+    "architectures": [
+      "LlamaForCausalLM"
+    ],
+    "model_type": "llama",
+    "tokenizer_config": {
+      "bos_token": "<|begin_of_text|>",
+      "chat_template": "{% set loop_messages = messages %}{% for message in loop_messages %}{% set content = '<|start_header_id|>' + message['role'] + '<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %}{% endif %}{{ content }}{% endfor %}{% if add_generation_prompt %}{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}{% endif %}",
+      "eos_token": "<|end_of_text|>",
+      "pad_token": "<|end_of_text|>"
+    }
+  },
+  "cardData": {
+    "base_model": "Writer/Palmyra-x-003",
+    "tags": [
+      "instruct",
+      "finetune",
+      "DPO",
+      "distillation",
+      "heathcare",
+      "medical",
+      "clinical",
+      "med",
+      "lifescience",
+      "Pharmaceutical",
+      "Pharma",
+      "Enterprise LLM",
+      "Enterprise",
+      "Enterprise ready"
+    ],
+    "model_type": "palmyra",
+    "model-index": [
+      {
+        "name": "Palmyra-Med-70B",
+        "results": []
+      }
+    ],
+    "license": "other",
+    "license_name": "writer-open-model-license",
+    "license_link": "https://writer.com/legal/open-model-license/",
+    "extra_gated_prompt": "By clicking \"Agree\", you agree to the [License Agreement](https://writer.com/legal/open-model-license/) and acknowledge Writer's [Privacy Policy](https://writer.com/legal/acceptable-use/).",
+    "extra_gated_fields": {
+      "Name": "text",
+      "Email": "text",
+      "Organization or Affiliation": "text",
+      "Receive email updates and promotions on Writer products, services, and research?": {
+        "type": "select",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "I acknowledge that this model is for non-commercial use only unless I acquire a separate license from Writer": "checkbox"
+    },
+    "language": [
+      "en"
+    ],
+    "widget": [
+      {
+        "example_title": "Palmyra-Med-70B",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a highly knowledgeable and experienced expert in the healthcare and biomedical field, possessing extensive medical knowledge and practical expertise."
+          },
+          {
+            "role": "user",
+            "content": "Does danzhi Xiaoyao San ameliorate depressive-like behavior by shifting toward serotonin via the downregulation of hippocampal indoleamine 2,3-dioxygenase?"
+          }
+        ],
+        "output": {
+          "text": "Danzhi Xiaoyao San (DXS) exhibited significant antidepressant-like effects in rats subjected to chronic unpredictable mild stress (CUMS), a commonly used model for inducing depressive-like behavior. The administration of DXS led to a notable reduction in the activity of indoleamine 2,3-dioxygenase (IDO) in the hippocampus. This reduction in IDO activity is crucial because IDO is an enzyme that catalyzes the degradation of tryptophan into kynurenine (Kyn), thereby diverting tryptophan away from the serotonin (5-HT) synthesis pathway. By downregulating IDO, DXS effectively shifts the balance of tryptophan metabolism towards increased serotonin production, thereby enhancing the availability of serotonin. This shift in the Kyn/5-HT pathway favoring serotonin is likely a key mechanism underlying the antidepressant effects observed with DXS treatment. Enhanced serotonin levels in the hippocampus are associated with improved mood and reduction of depressive symptoms, suggesting that DXS could be a promising therapeutic agent for managing depression."
+        }
+      }
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "img/Palmyra Medical wordmark.svg"
+    },
+    {
+      "rfilename": "img/med_model_chart.png"
+    },
+    {
+      "rfilename": "img/med_model_heatmap.png"
+    },
+    {
+      "rfilename": "model-00001-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00003-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00004-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00005-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00006-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00007-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00008-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00009-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00010-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00011-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00012-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00013-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00014-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00015-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00016-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00017-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00018-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00019-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00020-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00021-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00022-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00023-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00024-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00025-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00026-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00027-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00028-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00029-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model-00030-of-00030.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "Mastercourse/Writer-Palmyra-Med-70B",
+    "Entrustious/Writer-Palmyra-Med-70B",
+    "Surbhi123/Medical_RAG",
+    "Iy55/Writer-Palmyra-Med-70B",
+    "Genzo1010/Med",
+    "SMEW-TECH/Palmyra-Med-70B"
+  ],
+  "createdAt": "2024-05-05T23:44:37.000Z",
+  "safetensors": {
+    "parameters": {
+      "F16": 70553706496
+    },
+    "total": 70553706496
+  },
+  "usedStorage": 418356334808
+}

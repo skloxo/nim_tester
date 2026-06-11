@@ -1,0 +1,121 @@
+{
+  "_id": "642ab302fe4a12faa4270d0e",
+  "id": "google/deplot",
+  "private": false,
+  "pipeline_tag": "visual-question-answering",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "pytorch",
+    "safetensors",
+    "pix2struct",
+    "image-text-to-text",
+    "visual-question-answering",
+    "en",
+    "fr",
+    "ro",
+    "de",
+    "multilingual",
+    "arxiv:2212.10505",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 36349,
+  "likes": 317,
+  "modelId": "google/deplot",
+  "author": "google",
+  "sha": "6e76d62430da16986be3426bae32301fb9115397",
+  "lastModified": "2023-09-06T19:53:17.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "Pix2StructForConditionalGeneration"
+    ],
+    "model_type": "pix2struct",
+    "tokenizer_config": {
+      "eos_token": "</s>",
+      "pad_token": "<pad>",
+      "unk_token": "<unk>"
+    }
+  },
+  "cardData": {
+    "language": [
+      "en",
+      "fr",
+      "ro",
+      "de",
+      "multilingual"
+    ],
+    "inference": false,
+    "pipeline_tag": "visual-question-answering",
+    "license": "apache-2.0"
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForImageTextToText",
+    "pipeline_tag": "image-text-to-text",
+    "processor": "AutoProcessor"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    },
+    {
+      "rfilename": "pytorch_model.bin"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "spiece.model"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "fl399/deplot_plus_llm",
+    "JavierGon12/retrAIced",
+    "eduagarcia/multilingual-tokenizer-leaderboard",
+    "moplat90/Chart2Data",
+    "prattay/Chart_QnA",
+    "prockot/biomed-paper-extractor",
+    "Msp/deplot_plus_llm",
+    "SUGE212/google-deplot",
+    "ShaoXia/Semi-Annual_Security_Exam",
+    "aeuc/deneme",
+    "imjliao/deplot",
+    "MediPlusPlus/VQA_new",
+    "Shashidhar226/VisionQuery",
+    "realkun/c2t",
+    "Adjoumani/chatWithYourPDF",
+    "surya07/multimodal-rag-llama",
+    "ashishninehertz/MULTIMODEl",
+    "vitaraanalytics/test-deplot-model",
+    "dkn8/test-deplot-model"
+  ],
+  "createdAt": "2023-04-03T11:05:38.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 282285696
+    },
+    "total": 282285696
+  },
+  "usedStorage": 4857036730
+}

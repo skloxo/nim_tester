@@ -1,0 +1,247 @@
+{
+  "_id": "65c48cae885203c00532a392",
+  "id": "google/gemma-2b",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "gguf",
+    "gemma",
+    "text-generation",
+    "arxiv:2312.11805",
+    "arxiv:2009.03300",
+    "arxiv:1905.07830",
+    "arxiv:1911.11641",
+    "arxiv:1904.09728",
+    "arxiv:1905.10044",
+    "arxiv:1907.10641",
+    "arxiv:1811.00937",
+    "arxiv:1809.02789",
+    "arxiv:1911.01547",
+    "arxiv:1705.03551",
+    "arxiv:2107.03374",
+    "arxiv:2108.07732",
+    "arxiv:2110.14168",
+    "arxiv:2304.06364",
+    "arxiv:2206.04615",
+    "arxiv:1804.06876",
+    "arxiv:2110.08193",
+    "arxiv:2009.11462",
+    "arxiv:2101.11718",
+    "arxiv:1804.09301",
+    "arxiv:2109.07958",
+    "arxiv:2203.09509",
+    "license:gemma",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 220703,
+  "likes": 1173,
+  "modelId": "google/gemma-2b",
+  "author": "google",
+  "sha": "9cf48e52b224239de00d483ec8eb84fb8d0f3a3a",
+  "lastModified": "2024-09-27T12:18:55.000Z",
+  "gated": "manual",
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "My name is Julien and I like to"
+    },
+    {
+      "text": "I like traveling by train because"
+    },
+    {
+      "text": "Paris is an amazing place to visit,"
+    },
+    {
+      "text": "Once upon a time,"
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "GemmaForCausalLM"
+    ],
+    "model_type": "gemma",
+    "tokenizer_config": {
+      "bos_token": "<bos>",
+      "eos_token": "<eos>",
+      "pad_token": "<pad>",
+      "unk_token": "<unk>",
+      "use_default_system_prompt": false
+    }
+  },
+  "cardData": {
+    "library_name": "transformers",
+    "new_version": "google/gemma-2-2b",
+    "license": "gemma",
+    "extra_gated_heading": "Access Gemma on Hugging Face",
+    "extra_gated_prompt": "To access Gemma on Hugging Face, you’re required to review and agree to Google’s usage license. To do this, please ensure you’re logged-in to Hugging Face and click below. Requests are processed immediately.",
+    "extra_gated_button_content": "Acknowledge license"
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "gguf": {
+    "total": 2506434560,
+    "architecture": "gemma",
+    "context_length": 8192,
+    "bos_token": "<bos>",
+    "eos_token": "<eos>",
+    "totalFileSize": 10031780672
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "gemma-2b.gguf"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "model-00001-of-00002.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00002.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer.model"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "openfree/LLM_Quantization",
+    "reach-vb/2024-ai-timeline",
+    "eduagarcia/open_pt_llm_leaderboard",
+    "Alpha-VLLM/Lumina-Next-T2I",
+    "Omnibus/google-gemma",
+    "google/synthid-text",
+    "logikon/open_cot_leaderboard",
+    "KBaba7/Quant",
+    "gen6scp/sana-zero",
+    "Omnibus/Chatbot-Compare",
+    "allenai/URIAL-Bench",
+    "FallnAI/Quantize-HF-Models",
+    "prometheus-eval/BiGGen-Bench-Leaderboard",
+    "bhaskartripathi/LLM_Quantization",
+    "Justinrune/LLaMA-Factory",
+    "ruslanmv/convert_to_gguf",
+    "Omnibus/InferenceClient_Chatbots",
+    "cot-leaderboard/open-cot-dashboard",
+    "Tomoniai/gemma-chat",
+    "seawolf2357/LLM_Quantization",
+    "ghrua/repo-app",
+    "dar-tau/selfie",
+    "totolook/Quant",
+    "aadya1762/GemmaDemoSt2",
+    "Naphula/gguf-repo-suite",
+    "fantos/Chatbot-Compare",
+    "amirgame197/Gemma-Chat",
+    "K00B404/LLM_Quantization",
+    "Nymbo/LangHub",
+    "pavel321/huggingface-cli-completion",
+    "Steven10429/apply_lora_and_quantize",
+    "fokan/train-modle",
+    "asif00/Chat_with_Gemma_2B",
+    "Darwinkel/gemma-2b-sciq",
+    "Mrzn10/google-gemma-7b",
+    "AilexGPT/Chatbot-Compare",
+    "Yahir/gemmaw",
+    "saneowl/google_gemma_model_demo",
+    "Nerox6x/google-gemma-2b",
+    "Nymbo/2024-ai-timeline",
+    "Kevinlidk/2024-ai-timeline",
+    "Kakaarot/Gemma-HuggingFace_TextCompletion_Demo",
+    "Maki-Maki/Space",
+    "Futuresony/FutureX",
+    "Noveumai/NovaEval",
+    "Bhavya077/Audit_Risk_Extractor",
+    "shrey318/interview-prep-chatbot",
+    "Oss11/Quantize-HF-Models",
+    "Xlnk/Quantize-HF-Models",
+    "exploitz3r0bbd/Quantize-HF-Models",
+    "ClaireLee2429/recipe-lm-api",
+    "5dimension/sentinel-tokenizer-space",
+    "FREE-AI/google-gemma",
+    "negismohit123/gemmaLiBot",
+    "Nymbo/Chatbot-Compare",
+    "negismohit123/test_Gradio",
+    "negismohit123/LinkedIn_Bot_Gemma_Streamlit",
+    "SilentWraith/google-gemma-dev2",
+    "ajeetkhf/gemmaFirstHW",
+    "yitlian/google-gemma",
+    "Zoory/google-gemma",
+    "pranjalpandey/gemma-open-instruct",
+    "INDHU123/Chatbot_comparing_results",
+    "K00B404/Teachershub",
+    "imxieke/google-gemma-2b",
+    "rahgadda/chatwithpdf",
+    "geored/gtmio",
+    "shahul01/ilds-chat-ui-ingestor-forked",
+    "ali121300/google-gemma-A",
+    "ThomasLiuBin/google-gemma",
+    "Taf2023/google-gemma",
+    "SiddhanthSridhar/google-gemma",
+    "VuTong/google-gemma-2b",
+    "jordyvl/ask_my_thesis",
+    "elineve/H2OTest",
+    "sakurasui/google-gemma-2b",
+    "riabayonaor/Gema",
+    "riabayonaor/chatbotGema",
+    "kirankunapuli/Gemma-2B-Hinglish-Model-Inference-v1.0",
+    "Omnibus/google-gemma-dev",
+    "Omnibus/AI-book",
+    "poi1258/google-gemma",
+    "leokwsw/gradio_google_gemma",
+    "ARdeBaCt/google-gemma-2b",
+    "yongyi169/Gradio_Gemma_Finetune",
+    "paradroid/google-gemma-2b",
+    "EmirSinan/google-gemma-2b",
+    "chandanrajCL/google-gemma-2b",
+    "talk2mehul/gemma-chat",
+    "Borber/google-gemma-2b",
+    "Omnibus/google-gemma-dev2",
+    "lys123/google-gemma-2b",
+    "hellofaz007/blogUsingLangchain",
+    "twhiddenman/gemma-chat",
+    "YANGSongsong/GemmaChat",
+    "45wzh/gemmaTest",
+    "yiyiyiwufeng/google-gemma-2b",
+    "Leo11235/google-gemma",
+    "Mikki01/Gemma",
+    "hmilystone/google-gemma-2b"
+  ],
+  "createdAt": "2024-02-08T08:11:26.000Z",
+  "safetensors": {
+    "parameters": {
+      "BF16": 2506172416
+    },
+    "total": 2506172416
+  },
+  "inference": "warm",
+  "usedStorage": 61269140792
+}

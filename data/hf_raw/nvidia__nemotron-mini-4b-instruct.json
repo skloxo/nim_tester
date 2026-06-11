@@ -1,0 +1,153 @@
+{
+  "_id": "66e06f40ec26df895d3b4953",
+  "id": "nvidia/Nemotron-Mini-4B-Instruct",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "pytorch",
+    "nemo",
+    "nemotron",
+    "text-generation",
+    "nvidia",
+    "llama-3",
+    "conversational",
+    "en",
+    "arxiv:2402.16819",
+    "arxiv:2407.14679",
+    "license:other",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 160835,
+  "likes": 182,
+  "modelId": "nvidia/Nemotron-Mini-4B-Instruct",
+  "author": "nvidia",
+  "sha": "791833e92ebddb0bc2c1007f6d2b6764f886a2ae",
+  "lastModified": "2025-02-14T19:03:33.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "Hi, what can you help me with?"
+    },
+    {
+      "text": "What is 84 * 3 / 2?"
+    },
+    {
+      "text": "Tell me an interesting fact about the universe!"
+    },
+    {
+      "text": "Explain quantum computing in simple terms."
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "NemotronForCausalLM"
+    ],
+    "model_type": "nemotron",
+    "tokenizer_config": {
+      "bos_token": "<s>",
+      "chat_template": "{{'<extra_id_0>System'}}{% for message in messages %}{% if message['role'] == 'system' %}{{'\n' + message['content'].strip()}}{% if tools or contexts %}{{'\n'}}{% endif %}{% endif %}{% endfor %}{% if tools %}{% for tool in tools %}{{ '\n<tool> ' + tool|tojson + ' </tool>' }}{% endfor %}{% endif %}{% if contexts %}{% if tools %}{{'\n'}}{% endif %}{% for context in contexts %}{{ '\n<context> ' + context.strip() + ' </context>' }}{% endfor %}{% endif %}{{'\n\n'}}{% for message in messages %}{% if message['role'] == 'user' %}{{ '<extra_id_1>User\n' + message['content'].strip() + '\n' }}{% elif message['role'] == 'assistant' %}{{ '<extra_id_1>Assistant\n' + message['content'].strip() + '\n' }}{% elif message['role'] == 'tool' %}{{ '<extra_id_1>Tool\n' + message['content'].strip() + '\n' }}{% endif %}{% endfor %}{%- if add_generation_prompt %}{{'<extra_id_1>Assistant\n'}}{%- endif %}",
+      "eos_token": "</s>"
+    }
+  },
+  "cardData": {
+    "license": "other",
+    "license_name": "nvidia-open-model-license",
+    "license_link": "https://developer.download.nvidia.com/licenses/nvidia-open-model-license-agreement-june-2024.pdf",
+    "library_name": "transformers",
+    "pipeline_tag": "text-generation",
+    "language": [
+      "en"
+    ],
+    "tags": [
+      "nvidia",
+      "llama-3",
+      "pytorch"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "LICENSE"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "nemo/nemotron-mini-4b-instruct.nemo"
+    },
+    {
+      "rfilename": "nvidia-community-model-license-aug2024.pdf"
+    },
+    {
+      "rfilename": "pytorch_model.bin"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer.model"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "pliny-the-prompter/obliteratus",
+    "eduagarcia/multilingual-tokenizer-leaderboard",
+    "harshpbajaj/nemotron-ops-commander",
+    "Shantanupathak94/Ethrix-Ai",
+    "Kodacoda/obliteratus",
+    "Leo71288/Nvidia_Nemotron2",
+    "TGAshwinYT/EventHorizon-Backend",
+    "dromero14521/obliteratus",
+    "sub314xxl/obliteratus",
+    "cw4444/obliteratus",
+    "kalmuahlaunda/obliteratus",
+    "mastodonitis/obliteratus",
+    "GrozniMilitq/obliteratus",
+    "dumbordumber/obliteratus",
+    "kicfk/obliteratus",
+    "liminal4423/obliteratus",
+    "aaahmet/obliteratus",
+    "kirikir13/obliteratus",
+    "RaccoonStampede/obliteratus",
+    "charconnai/obliteratus",
+    "rbinrs/obliteratus",
+    "cypher109/obliteratus",
+    "duarffodog/obliteratus",
+    "Ngixdev/obliteratus",
+    "TOpNeT7/obliteratus",
+    "Deadmon/obliteratus",
+    "milkygingers/obliteratus",
+    "impresionist/OBLITERATUS",
+    "bresseporix22/obliteratus",
+    "Sendpns/obliteratus",
+    "epixdonkey/obliteratus",
+    "jessy38472/obliteratus",
+    "ymonoce/obliteratus",
+    "Salehmangrio114/openworkfyp",
+    "Jjopajd1334/obliteratus",
+    "dryouviavant/obliteratus",
+    "Johnblick187/obliteratus"
+  ],
+  "createdAt": "2024-09-10T16:09:36.000Z",
+  "usedStorage": 25171362021
+}

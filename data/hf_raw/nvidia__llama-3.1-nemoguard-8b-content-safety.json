@@ -1,0 +1,72 @@
+{
+  "_id": "67884ad2fefff7057e5c5f75",
+  "id": "nvidia/llama-3.1-nemoguard-8b-content-safety",
+  "private": false,
+  "pipeline_tag": "text-classification",
+  "library_name": "peft",
+  "tags": [
+    "peft",
+    "safetensors",
+    "text-classification",
+    "en",
+    "dataset:nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
+    "base_model:meta-llama/Llama-3.1-8B-Instruct",
+    "base_model:adapter:meta-llama/Llama-3.1-8B-Instruct",
+    "license:other",
+    "region:us"
+  ],
+  "downloads": 552,
+  "likes": 34,
+  "modelId": "nvidia/llama-3.1-nemoguard-8b-content-safety",
+  "author": "nvidia",
+  "sha": "ef1f9de54f760180f70b517dd10362d9463ddc58",
+  "lastModified": "2025-06-09T19:46:21.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "I like you. I love you"
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "peft": {
+      "base_model_name_or_path": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "task_type": "CAUSAL_LM"
+    }
+  },
+  "cardData": {
+    "license": "other",
+    "datasets": [
+      "nvidia/Aegis-AI-Content-Safety-Dataset-2.0"
+    ],
+    "language": [
+      "en"
+    ],
+    "metrics": [
+      "f1"
+    ],
+    "base_model": [
+      "meta-llama/Llama-3.1-8B-Instruct"
+    ],
+    "pipeline_tag": "text-classification",
+    "library_name": "peft"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "adapter_config.json"
+    },
+    {
+      "rfilename": "adapter_model.safetensors"
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-01-15T23:54:58.000Z",
+  "usedStorage": 1226976352
+}

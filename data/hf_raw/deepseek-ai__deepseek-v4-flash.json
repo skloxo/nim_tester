@@ -1,0 +1,368 @@
+{
+  "_id": "69e864e440a44c9fb7c54efc",
+  "id": "deepseek-ai/DeepSeek-V4-Flash",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "deepseek_v4",
+    "text-generation",
+    "conversational",
+    "license:mit",
+    "eval-results",
+    "endpoints_compatible",
+    "8-bit",
+    "fp8",
+    "region:us"
+  ],
+  "downloads": 1904105,
+  "likes": 1144,
+  "modelId": "deepseek-ai/DeepSeek-V4-Flash",
+  "author": "deepseek-ai",
+  "sha": "6976c7ff1b30a1b2cb7805021b8ba4684041f136",
+  "lastModified": "2026-05-06T04:18:09.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "Hi, what can you help me with?"
+    },
+    {
+      "text": "What is 84 * 3 / 2?"
+    },
+    {
+      "text": "Tell me an interesting fact about the universe!"
+    },
+    {
+      "text": "Explain quantum computing in simple terms."
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "DeepseekV4ForCausalLM"
+    ],
+    "model_type": "deepseek_v4",
+    "quantization_config": {
+      "quant_method": "fp8"
+    },
+    "tokenizer_config": {
+      "bos_token": {
+        "__type": "AddedToken",
+        "content": "<｜begin▁of▁sentence｜>",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": false
+      },
+      "eos_token": {
+        "__type": "AddedToken",
+        "content": "<｜end▁of▁sentence｜>",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": false
+      },
+      "pad_token": {
+        "__type": "AddedToken",
+        "content": "<｜end▁of▁sentence｜>",
+        "lstrip": false,
+        "normalized": true,
+        "rstrip": false,
+        "single_word": false
+      },
+      "unk_token": null
+    }
+  },
+  "cardData": {
+    "license": "mit",
+    "library_name": "transformers"
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "DeepSeek_V4.pdf"
+    },
+    {
+      "rfilename": "LICENSE"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "assets/dsv4_performance.png"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "encoding/README.md"
+    },
+    {
+      "rfilename": "encoding/encoding_dsv4.py"
+    },
+    {
+      "rfilename": "encoding/test_encoding_dsv4.py"
+    },
+    {
+      "rfilename": "encoding/tests/test_input_1.json"
+    },
+    {
+      "rfilename": "encoding/tests/test_input_2.json"
+    },
+    {
+      "rfilename": "encoding/tests/test_input_3.json"
+    },
+    {
+      "rfilename": "encoding/tests/test_input_4.json"
+    },
+    {
+      "rfilename": "encoding/tests/test_output_1.txt"
+    },
+    {
+      "rfilename": "encoding/tests/test_output_2.txt"
+    },
+    {
+      "rfilename": "encoding/tests/test_output_3.txt"
+    },
+    {
+      "rfilename": "encoding/tests/test_output_4.txt"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "inference/README.md"
+    },
+    {
+      "rfilename": "inference/config.json"
+    },
+    {
+      "rfilename": "inference/convert.py"
+    },
+    {
+      "rfilename": "inference/generate.py"
+    },
+    {
+      "rfilename": "inference/kernel.py"
+    },
+    {
+      "rfilename": "inference/model.py"
+    },
+    {
+      "rfilename": "inference/requirements.txt"
+    },
+    {
+      "rfilename": "model-00001-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00003-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00004-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00005-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00006-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00007-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00008-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00009-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00010-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00011-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00012-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00013-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00014-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00015-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00016-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00017-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00018-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00019-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00020-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00021-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00022-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00023-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00024-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00025-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00026-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00027-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00028-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00029-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00030-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00031-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00032-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00033-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00034-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00035-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00036-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00037-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00038-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00039-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00040-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00041-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00042-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00043-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00044-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00045-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model-00046-of-00046.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "abdallah110/htf",
+    "crusoeai/foundry-model-arena",
+    "adesh01/civicsetu",
+    "Otter21/OPENENV_RL_01",
+    "bluemoonsoldout/llm-cal",
+    "shiva0013/YT-AI-Automation",
+    "x1001000/YouTube-Comments-Analyzer",
+    "dherain24/claude-proxy",
+    "bhavesh122/super_AI",
+    "juanvilla/AgroDecisiones_Colombia",
+    "billyaungmyint/github-sync-test",
+    "BladeSzaSza/Immersive-Vibe-Development-Studio",
+    "Ashwath1107/Mealverse-ai-v1",
+    "Scliper/femchik",
+    "Otter21/Gov_Workflow_RL",
+    "Arc56/nim-proxy",
+    "Sphahh222/deepseek-ai-DeepSeek-V4-Flash",
+    "roshiai/deepseek-ai-DeepSeek-V4-Flash",
+    "ajeet9843/NextQuest.ai",
+    "dhammawatthumpra/tipitaka",
+    "AnhLee0/AI-Coach",
+    "happy025025/deepseek-ai-DeepSeek-V4-Flash",
+    "barryallen555/deepseek-ai-DeepSeek-V4-Flash",
+    "robsongomeshf/deepseek-ai-DeepSeek-V4-Flash",
+    "Mikasa9629/openrouter-proxy",
+    "oimiragieo/mine-your-moe-atlas",
+    "EricBEARYT/musify-backend",
+    "FunApp/FunapprendreN8N",
+    "crusoeai/pixel-prix",
+    "Ficux260/DeepSeek-V4-Flash",
+    "mengxiang225/DialecticaMap",
+    "Ravvaxx/deepseek-ai-DeepSeek-V4-Flash",
+    "coffee222/deepseek-ai-DeepSeek-V4-Flash",
+    "lk080424/swarm-backend",
+    "nakeeb-ai/openshell-nvidia-sandbox",
+    "hermesinho/llm2api",
+    "yanglegetuotuo/deepseek-ai-DeepSeek-V4-Flash",
+    "shivangnayar/S",
+    "Rahat1102/DeepSeek-V4",
+    "needdeepseek/spectrum-enterprise"
+  ],
+  "createdAt": "2026-04-22T06:04:20.000Z",
+  "safetensors": {
+    "parameters": {
+      "BF16": 1415259264,
+      "I64": 2327040,
+      "F32": 36168018,
+      "F8_E8M0": 8858737664,
+      "F8_E4M3": 6023020544,
+      "I8": 141733920768
+    },
+    "total": 158069433298
+  },
+  "inference": "warm",
+  "usedStorage": 159641337663
+}

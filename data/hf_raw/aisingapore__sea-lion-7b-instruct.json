@@ -1,0 +1,194 @@
+{
+  "_id": "65bb37f104c8a5d626e32e12",
+  "id": "aisingapore/SEA-LION-v1-7B-IT",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "mpt",
+    "text-generation",
+    "conversational",
+    "custom_code",
+    "en",
+    "zh",
+    "id",
+    "ms",
+    "tl",
+    "my",
+    "vi",
+    "th",
+    "lo",
+    "km",
+    "ta",
+    "arxiv:2309.06085",
+    "base_model:aisingapore/SEA-LION-v1-7B",
+    "base_model:finetune:aisingapore/SEA-LION-v1-7B",
+    "license:mit",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 385,
+  "likes": 24,
+  "modelId": "aisingapore/SEA-LION-v1-7B-IT",
+  "author": "aisingapore",
+  "sha": "47a9f060b1c3c8f9344a489fbad042d1fc3edd71",
+  "lastModified": "2025-04-14T05:34:37.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "Hi, what can you help me with?"
+    },
+    {
+      "text": "What is 84 * 3 / 2?"
+    },
+    {
+      "text": "Tell me an interesting fact about the universe!"
+    },
+    {
+      "text": "Explain quantum computing in simple terms."
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "MPTForCausalLM"
+    ],
+    "auto_map": {
+      "AutoConfig": "configuration_mpt.MPTConfig",
+      "AutoModelForCausalLM": "modeling_mpt.MPTForCausalLM"
+    },
+    "model_type": "mpt",
+    "tokenizer_config": {
+      "bos_token": null,
+      "eos_token": "<|endoftext|>",
+      "pad_token": "<|padding|>",
+      "unk_token": "<unk>",
+      "chat_template": "{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}### USER:\n{{ message['content'] + '\n\n' }}{% elif message['role'] == 'assistant' %}### RESPONSE:\n{{ message['content'] + '\n\n' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}{% if add_generation_prompt %}### RESPONSE:\n{% endif %}"
+    }
+  },
+  "cardData": {
+    "base_model": [
+      "aisingapore/SEA-LION-v1-7B"
+    ],
+    "new_version": "aisingapore/Gemma-SEA-LION-v3-9B-IT",
+    "license": "mit",
+    "language": [
+      "en",
+      "zh",
+      "id",
+      "ms",
+      "tl",
+      "my",
+      "vi",
+      "th",
+      "lo",
+      "km",
+      "ta"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "custom_class": "modeling_mpt.MPTForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "adapt_tokenizer.py"
+    },
+    {
+      "rfilename": "attention.py"
+    },
+    {
+      "rfilename": "blocks.py"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "configuration_mpt.py"
+    },
+    {
+      "rfilename": "custom_embedding.py"
+    },
+    {
+      "rfilename": "fc.py"
+    },
+    {
+      "rfilename": "ffn.py"
+    },
+    {
+      "rfilename": "flash_attn_triton.py"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "hf_prefixlm_converter.py"
+    },
+    {
+      "rfilename": "meta_init_context.py"
+    },
+    {
+      "rfilename": "model-00001-of-00004.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00004.safetensors"
+    },
+    {
+      "rfilename": "model-00003-of-00004.safetensors"
+    },
+    {
+      "rfilename": "model-00004-of-00004.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "modeling_mpt.py"
+    },
+    {
+      "rfilename": "norm.py"
+    },
+    {
+      "rfilename": "param_init_fns.py"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenization_SEA_BPE.py"
+    },
+    {
+      "rfilename": "tokenizer.model"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    },
+    {
+      "rfilename": "warnings.py"
+    }
+  ],
+  "spaces": [
+    "TeoJSSS/BrainBloom",
+    "rinmokudi12/Extension-v1kh"
+  ],
+  "createdAt": "2024-02-01T06:19:29.000Z",
+  "safetensors": {
+    "parameters": {
+      "BF16": 7501651968
+    },
+    "total": 7501651968
+  },
+  "usedStorage": 45019225738
+}

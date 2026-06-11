@@ -1,0 +1,204 @@
+{
+  "_id": "684b11e729c32c69e56d1db9",
+  "id": "google/gemma-3n-E2B-it",
+  "private": false,
+  "pipeline_tag": "image-text-to-text",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "gemma3n",
+    "image-text-to-text",
+    "automatic-speech-recognition",
+    "automatic-speech-translation",
+    "audio-text-to-text",
+    "video-text-to-text",
+    "conversational",
+    "arxiv:1905.07830",
+    "arxiv:1905.10044",
+    "arxiv:1911.11641",
+    "arxiv:1904.09728",
+    "arxiv:1705.03551",
+    "arxiv:1911.01547",
+    "arxiv:1907.10641",
+    "arxiv:1903.00161",
+    "arxiv:2210.03057",
+    "arxiv:2502.12404",
+    "arxiv:2411.19799",
+    "arxiv:2009.03300",
+    "arxiv:2502.21228",
+    "arxiv:2311.12022",
+    "arxiv:2403.07974",
+    "arxiv:2108.07732",
+    "arxiv:2107.03374",
+    "base_model:google/gemma-3n-E4B-it",
+    "base_model:finetune:google/gemma-3n-E4B-it",
+    "license:gemma",
+    "endpoints_compatible",
+    "region:us"
+  ],
+  "downloads": 450052,
+  "likes": 300,
+  "modelId": "google/gemma-3n-E2B-it",
+  "author": "google",
+  "sha": "5e092ebca197cdcd8d8b195040accf22693501bc",
+  "lastModified": "2025-07-14T13:55:52.000Z",
+  "gated": "manual",
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "Hi, what can you help me with?"
+    },
+    {
+      "text": "What is 84 * 3 / 2?"
+    },
+    {
+      "text": "Tell me an interesting fact about the universe!"
+    },
+    {
+      "text": "Explain quantum computing in simple terms."
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "Gemma3nForConditionalGeneration"
+    ],
+    "model_type": "gemma3n",
+    "tokenizer_config": {
+      "bos_token": "<bos>",
+      "eos_token": "<eos>",
+      "pad_token": "<pad>",
+      "unk_token": "<unk>",
+      "use_default_system_prompt": false
+    },
+    "chat_template_jinja": "{{ bos_token }}\n{%- if messages[0]['role'] == 'system' -%}\n    {%- if messages[0]['content'] is string -%}\n        {%- set first_user_prefix = messages[0]['content'] + '\n\n' -%}\n    {%- else -%}\n        {%- set first_user_prefix = messages[0]['content'][0]['text'] + '\n\n' -%}\n    {%- endif -%}\n    {%- set loop_messages = messages[1:] -%}\n{%- else -%}\n    {%- set first_user_prefix = \"\" -%}\n    {%- set loop_messages = messages -%}\n{%- endif -%}\n{%- for message in loop_messages -%}\n    {%- if (message['role'] == 'user') != (loop.index0 % 2 == 0) -%}\n        {{ raise_exception(\"Conversation roles must alternate user/assistant/user/assistant/...\") }}\n    {%- endif -%}\n    {%- if (message['role'] == 'assistant') -%}\n        {%- set role = \"model\" -%}\n    {%- else -%}\n        {%- set role = message['role'] -%}\n    {%- endif -%}\n    {{ '<start_of_turn>' + role + '\n' + (first_user_prefix if loop.first else \"\") }}\n    {%- if message['content'] is string -%}\n        {{ message['content'] | trim }}\n    {%- elif message['content'] is iterable -%}\n        {%- for item in message['content'] -%}\n            {%- if item['type'] == 'audio' -%}\n                {{ '<audio_soft_token>' }}\n            {%- elif item['type'] == 'image' -%}\n                {{ '<image_soft_token>' }}\n            {%- elif item['type'] == 'text' -%}\n                {{ item['text'] | trim }}\n            {%- endif -%}\n        {%- endfor -%}\n    {%- else -%}\n        {{ raise_exception(\"Invalid content type\") }}\n    {%- endif -%}\n    {{ '<end_of_turn>\n' }}\n{%- endfor -%}\n{%- if add_generation_prompt -%}\n    {{'<start_of_turn>model\n'}}\n{%- endif -%}\n"
+  },
+  "cardData": {
+    "license": "gemma",
+    "library_name": "transformers",
+    "pipeline_tag": "image-text-to-text",
+    "extra_gated_heading": "Access Gemma on Hugging Face",
+    "extra_gated_prompt": "To access Gemma on Hugging Face, you’re required to review and agree to Google’s usage license. To do this, please ensure you’re logged in to Hugging Face and click below. Requests are processed immediately.",
+    "extra_gated_button_content": "Acknowledge license",
+    "base_model": "google/gemma-3n-E4B-it",
+    "tags": [
+      "automatic-speech-recognition",
+      "automatic-speech-translation",
+      "audio-text-to-text",
+      "video-text-to-text"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForImageTextToText",
+    "pipeline_tag": "image-text-to-text",
+    "processor": "AutoProcessor"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "chat_template.jinja"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "model-00001-of-00003.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00003.safetensors"
+    },
+    {
+      "rfilename": "model-00003-of-00003.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "notebook.ipynb"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    },
+    {
+      "rfilename": "processor_config.json"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer.model"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [
+    "eduagarcia/open_pt_llm_leaderboard",
+    "Monster/gemma-3n-E2B-it",
+    "bilguun/gemma3n-audio-mn",
+    "dvpearl/REFRAME",
+    "jashdoshi77/notebooklm-fast",
+    "garage-lab/MCP_STRUCTRA",
+    "Sidoineko/AgriLensAI",
+    "raksama19/Scholar-Express",
+    "Eliot0110/Travel_Assistant",
+    "Senpai315/Mohan-Ai",
+    "Senpai315/Diplohub",
+    "AlauStone/rag-assistant",
+    "Nipun/agent-101",
+    "Ajmat1234/jharform",
+    "only1ahmed/personal",
+    "Shago/pronunciation_assessment",
+    "saadawaissheikh/langchain_model",
+    "Bonosa2/Scribbled-docs-notes",
+    "johnkezia9008/text_audio_to_video",
+    "SHIKARICHACHA/MultiModel_Music_AI",
+    "raksama19/Test_Voice",
+    "Bonosa2/notes",
+    "ujjwalbgn/GemmaYaatri",
+    "suanan/gemma3n-image-audio",
+    "dicksonsarpong9/gemma3n-cocoa-quality",
+    "kaiku03/gemma3n-2b-it-challenge-demo",
+    "docilio/3nhance",
+    "flycycy/EldercareGemma3n",
+    "myyim/nutritionApp",
+    "romana8888/essay",
+    "Ashwin77/Reddit_Chatbot",
+    "ThisUsernameAlreadyExistsAlreadyExists/infokan-ayce",
+    "Karthix1/ai-code-explainer",
+    "KamalaManasaM/Eval_System",
+    "shortm/api",
+    "InFengQwQ/gemma-3n-E2B-it",
+    "rufatronics/Gemma3n",
+    "weiqiangntufyp/FYP",
+    "mohamedhuggig/blueprint-api",
+    "weiqiangntufyp/FYP_NEW",
+    "LogitCode/FlexChat",
+    "LogitCode/FlexChat-Warm",
+    "LogitCode/FlexChat-terminal",
+    "LogitCode/FlexChat-Gold",
+    "LogitCode/FlexChat-blue",
+    "al-fariqy/gemma-3n-E2B-it",
+    "Dorjzodovsuren/gemma-3n-E2B-it",
+    "patocolher/maria-covid",
+    "Henley2035/HenAi",
+    "omar559/Kharbasha-api",
+    "joashsam/henaiv2",
+    "shmr90661/haven-ai-backend",
+    "patocalher/rico-kotai"
+  ],
+  "createdAt": "2025-06-12T17:44:07.000Z",
+  "usedStorage": 36347493779
+}
